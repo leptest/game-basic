@@ -9,36 +9,35 @@ export default class {
 		this.slots = [];
 	}
 
+	// levelUp() {}
+
+	// addAttribute() {}
+
 	equip = (item) => {
-		this.slots.push(item);
-
 		console.log(`${this.name} equipped ${item}.`);
+
+		this.slots.push(item);
 	}
 
-	attack = (monster) => {
-		monster.takeDamage(this.strength);
+	attack = (target) => {
+		console.log(`${this.name} attacks ${target.name}.`);
 
-		console.log(`${this.name} deals ${this.strength} damage to ${monster.name}.`);
-	}
-
-	attackedBy = (enemy) => {
-		console.log(`${enemy.name} deals ${enemy.strength} damage to ${this.name}.`);
-
-		let newHealth = this.health - enemy.strength;
-
-		if (newHealth <= 0) {
-			this.isDead = true;
-			newHealth = 0;
-			console.log('dead');
-		}
-
-		this.health = newHealth;
-
-		return newHealth;
+		target.takeDamage(this.strength);
 	}
 
 	takeDamage = (damage) => {
-		this.health -= damage;
+		console.log(`${this.name} takes ${damage} damage.`);
+
+		const newHealth = this.health - damage > 0 ? this.health - damage : 0;
+
+		if (newHealth <= 0) {
+			console.log(`${this.name} dies.`);
+
+			this.isDead = true;
+			// newHealth = 0;
+		}
+
+		this.health = newHealth;
 	}
 
 	reportInfo = () => {
@@ -51,16 +50,3 @@ export default class {
 		};
 	}
 }
-
-
-// // easy leveling function
-// export const checkexp = ((player) => {
-// 	const el = document.querySelectorAll('#level')[0];
-//
-// 	if (player.experience > 3 * player.level) {
-// 		player.experience = 0;
-// 		player.level++;
-// 	}
-// 	// $('#bosssummons').text(`Boss Summons: ${player.summons}`);
-// 	el.textContent = `Level: ${player.level}`;
-// });

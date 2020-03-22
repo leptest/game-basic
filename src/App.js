@@ -3,14 +3,13 @@ import React from 'react';
 // import List from './components/List';
 // import Form from './components/Form';
 import FightWindow from './components/FightWindow';
-// import Character from './classes/character';
+import Character from './classes/character';
 
-// const daniel = new Character({ name: 'Daniel' });
-// const demon = new Character({ name: 'Demon' });
-// daniel.equip('shield');
-// daniel.attack(demon);
-// demon.reportInfo();
-// console.log(daniel.name);
+const daniel = new Character({ name: 'Daniel' });
+const demon = new Character({ name: 'Demon' });
+daniel.equip('shield');
+daniel.attack(demon);
+demon.reportInfo();
 
 class App extends React.Component {
 	// constructor(props) {
@@ -27,19 +26,12 @@ class App extends React.Component {
 	// }
 
 	attack = () => {
-		const {
-			player,
-			enemy,
-		} = this.state;
+		console.log('App.attack()');
 
-		const health = enemy.attackedBy(player);
-
-		this.setState((prevState) => ({
-			enemy: {
-				...prevState.enemy,
-				health,
-			},
-		}));
+		// const {
+		// 	player,
+		// 	enemy,
+		// } = this.state;
 
 		// this.setState((prevState) => ({
 		// 	...prevState,
