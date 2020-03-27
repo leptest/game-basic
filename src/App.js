@@ -3,13 +3,13 @@ import React from 'react';
 // import List from './components/List';
 // import Form from './components/Form';
 import FightWindow from './components/FightWindow';
-import Character from './classes/character';
 
-const daniel = new Character({ name: 'Daniel' });
-const demon = new Character({ name: 'Demon' });
-daniel.equip('shield');
-daniel.attack(demon);
-demon.reportInfo();
+// import Character from './classes/character';
+// const daniel = new Character({ name: 'Daniel' });
+// const demon = new Character({ name: 'Demon' });
+// daniel.equip('shield');
+// daniel.attack(demon);
+// demon.reportInfo();
 
 class App extends React.Component {
 	// constructor(props) {

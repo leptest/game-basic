@@ -59,6 +59,8 @@ function rootReducer(state = initialState, action) {
 				...cloneDeep(state.player),
 				...newStats,
 			},
+			isLevelUp: false,
+			hasLevelToSpend: false,
 		};
 	}
 
