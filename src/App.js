@@ -21,47 +21,13 @@ class App extends React.Component {
 	// 	};
 	// }
 
-	// componentDidMount() {
-	// 	console.log('did moount');
-	// }
-
-	attack = () => {
-		console.log('App.attack()');
-
-		// const {
-		// 	player,
-		// 	enemy,
-		// } = this.state;
-
-		// this.setState((prevState) => ({
-		// 	...prevState,
-		// 	enemy: {
-		// 		...prevState.enemy,
-		// 		health: prevState.enemy.health - 10,
-		// 	},
-		// }));
+	nothing = () => {
+		console.log('App.nothing()');
 	}
 
 	render() {
-		// const {
-		// 	player,
-		// 	enemy,
-		// } = this.state;
 		return (
 			<div>
-				{/* <h1>RPG Game</h1>
-				<Player player={player} />
-				<p>vs</p>
-				<Player player={enemy} />
-
-				<hr />
-
-				<button onClick={this.attack} type="button">Fight</button> */}
-
-				{/* <hr />
-				<List />
-				<Form />
-				<hr /> */}
 				<FightWindow />
 			</div>
 		);

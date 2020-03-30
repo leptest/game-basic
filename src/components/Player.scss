@@ -1,0 +1,22 @@
+.characters {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+body {
+	text-align: center;
+}
+
+.character {
+	flex: 0 0 auto;
+	width: 150px;
+	// height: 200px;
+	// border: 1px solid green;
+	margin: 20px;
+}
+
+.character__icon {
+	width: 150px;
+	height: 150px;
+}
