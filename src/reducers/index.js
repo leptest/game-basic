@@ -41,7 +41,7 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
 	switch (action.type) {
-	case ADD_ARTICLE:
+	case ADD_ARTICLE: {
 		console.log('ADD_ARTICLE');
 		return {
 			...cloneDeep(state),
@@ -50,8 +50,9 @@ const rootReducer = (state = initialState, action) => {
 				action.payload,
 			],
 		};
+	}
 
-	case NEW_BATTLE:
+	case NEW_BATTLE: {
 		console.log('NEW_BATTLE');
 		const numEnemies = randomIntegerInRange(1, 4);
 		const enemies = [];
@@ -65,6 +66,7 @@ const rootReducer = (state = initialState, action) => {
 			...cloneDeep(state),
 			enemies,
 		};
+	}
 
 	case LEVEL_UP: {
 		console.log('LEVEL_UP');
@@ -86,7 +88,7 @@ const rootReducer = (state = initialState, action) => {
 		};
 	}
 
-	case ATTACK_ENEMY:
+	case ATTACK_ENEMY: {
 		console.log('ATTACK_ENEMY');
 
 		const enemy = state.enemies.filter((e) => e.id === action.payload)[0];
@@ -148,8 +150,11 @@ const rootReducer = (state = initialState, action) => {
 			},
 			levelUps,
 		};
-	default:
+	}
+
+	default: {
 		return state;
+	}
 	}
 };
 
