@@ -17,6 +17,24 @@ const MONSTER_TYPES = [
 			strength: 1,
 		},
 	},
+	{
+		name: 'Rot Worm',
+		scalers: {
+			exp: 5,
+			variance: 0.1,
+			health: 1,
+			strength: 1,
+		},
+	},
+	{
+		name: 'Skeleton',
+		scalers: {
+			exp: 10,
+			variance: 0.1,
+			health: 1,
+			strength: 1,
+		},
+	},
 ];
 
 export default MONSTER_TYPES;
