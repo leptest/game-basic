@@ -1,13 +1,12 @@
-.health-bar {
+.level-bar {
 	border: 1px solid black;
 	height: 20px;
 	width: 100%;
-	background-color: red;
-	color: white;
+	background-color: lightgrey;
 	position: relative;
 
 	.bar {
-		background-color: green;
+		background-color: purple;
 		display: block;
 		position: absolute;
 		top: 0;
@@ -21,5 +20,9 @@
 	.text {
 		position: relative;
 		z-index: 2;
+	}
+
+	&.has-level {
+		border-color: yellow;
 	}
 }

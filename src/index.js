@@ -8,6 +8,8 @@ import { ConnectedRouter } from 'connected-react-router';
 import configureStore, { history } from './store/index';
 import FightWindow from './components/FightWindow';
 
+import './index.scss';
+
 const store = configureStore(/* initial state - doesn't seem to be working correctly */);
 
 ReactDOM.render(
@@ -27,8 +29,6 @@ ReactDOM.render(
 //
 // import store from './store/index';
 // import App from './App';
-//
-// import './index.css';
 //
 // ReactDOM.render(
 // 	<Provider store={store}>

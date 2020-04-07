@@ -2,12 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as allActions from '../actions/index';
 import HealthBar from './HealthBar';
+import ManaBar from './ManaBar';
+import SpeedBar from './SpeedBar';
+import LevelBar from './LevelBar';
+import Items from './Items';
 
 import './Player.scss';
 
 const ConnectedPlayer = (props) => {
 	// console.log(props);
-	const { player, attackEnemy, isEnemey } = props;
+	const {
+		player, attackEnemy, isEnemey, levelUps,
+	} = props;
 
 	if (!player) return false;
 
@@ -17,6 +23,9 @@ const ConnectedPlayer = (props) => {
 		level,
 		health,
 		maxHealth,
+		mana,
+		maxMana,
+		speed,
 		strength,
 		isDead,
 		exp,
@@ -29,11 +38,24 @@ const ConnectedPlayer = (props) => {
 
 	return (
 		<div className="character">
+			<SpeedBar speed={speed} maxSpeed={2000} />
 			<img className="character__icon" src={icon} alt="" />
 			<HealthBar health={health} maxHealth={maxHealth} />
-			<p><strong>{name}</strong></p>
-			<p>Lvl {level} - Str {strength} - Exp {exp}{!isEnemey ? (<>/{level * 10} </>) : null}</p>
-			{!isDead ? (<button type="button" onClick={attack}>Attack</button>) : 'Dead' }
+			<ManaBar mana={mana} maxMana={maxMana} />
+			<p><strong>{name} - Lvl {level}</strong></p>
+			<p>Str {strength} - Spd {speed}</p>
+			{!isEnemey ? (
+				<LevelBar exp={exp} maxExp={level * 10} levelUps={levelUps} />
+			) : (
+				<p>Exp {exp}</p>
+			)}
+
+			{!isDead ? (isEnemey ? (<button type="button" onClick={attack}>Attack</button>) : null) : 'Dead' }
+
+			{/* ITEMS */}
+			{!isEnemey ? (
+				<Items />
+			) : null}
 		</div>
 	);
 };
@@ -42,7 +64,7 @@ const mapDispatchToProps = {
 	...allActions,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = () => ({
 	// player: state.player,
 	// enemy: state.enemy,
 	// enemy2: state.enemy2,

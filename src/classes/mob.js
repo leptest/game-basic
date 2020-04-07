@@ -1,22 +1,23 @@
 import MONSTER_TYPES from '../constants/monster-types';
 
 const Mob = (id, type, level) => {
-	console.log('new mob');
-
 	const mobType = MONSTER_TYPES.filter((m) => m.name === type)[0];
 
 	// const newVariance = Math.random() < 0.5 ? 1 - mobType.scalers.variance : 1 + mobType.scalers.variance;
-	const newVariance = 1;
+	const newVariance = mobType.scalers.variance;
 
 	return {
 		id,
 		icon: `/images/monsters/${type}.svg`,
 		name: type,
 		level,
-		exp: Math.ceil(5 * mobType.scalers.exp * level * newVariance),
-		maxHealth: Math.ceil(10 * mobType.scalers.health * level * newVariance),
-		health: Math.ceil(10 * mobType.scalers.health * level * newVariance),
-		strength: Math.ceil(1 * mobType.scalers.strength * level * newVariance),
+		exp: Math.ceil(mobType.base.exp * mobType.scalers.exp * level * newVariance),
+		maxHealth: Math.ceil(mobType.base.health * mobType.scalers.health * level * newVariance),
+		health: Math.ceil(mobType.base.health * mobType.scalers.health * level * newVariance),
+		maxMana: Math.ceil(mobType.base.mana * mobType.scalers.mana * level * newVariance),
+		mana: Math.ceil(mobType.base.mana * mobType.scalers.mana * level * newVariance),
+		strength: Math.ceil(mobType.base.strength * mobType.scalers.strength * level * newVariance),
+		speed: Math.ceil(mobType.base.speed * mobType.scalers.speed * level * newVariance),
 		isDead: false,
 		slots: [],
 	};

@@ -1,0 +1,27 @@
+.fight-window {
+	height: 100%;
+	background-color: red;
+	background-image: url('../images/bg-fight.jpg');
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+
+	header {
+		flex: 0 0 100%;
+	}
+}
+
+
+.characters--enemies {
+	flex: 0 0 50%;
+}
+
+.characters--player {
+	flex: 0 0 50%;
+}
+
+.level-ups {
+	flex: 0 0 100%;
+}

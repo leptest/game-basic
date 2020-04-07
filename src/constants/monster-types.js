@@ -1,38 +1,74 @@
 const MONSTER_TYPES = [
 	{
 		name: 'Demon',
-		scalers: {
-			exp: 1,
-			variance: 0.5,
-			health: 1,
-			strength: 1.5,
-		},
-	},
-	{
-		name: 'Bat',
-		scalers: {
-			exp: 1,
-			variance: 0.1,
-			health: 0.5,
-			strength: 1,
-		},
-	},
-	{
-		name: 'Rot Worm',
-		scalers: {
+		base: {
 			exp: 5,
-			variance: 0.1,
-			health: 1,
+			health: 40,
+			mana: 100,
 			strength: 1,
+			speed: 50,
+		},
+		scalers: {
+			variance: 1,
+			exp: 1,
+			health: 1,
+			mana: 1,
+			strength: 1,
+			speed: 1,
 		},
 	},
 	{
 		name: 'Skeleton',
-		scalers: {
-			exp: 10,
-			variance: 0.1,
-			health: 1,
+		base: {
+			exp: 4,
+			health: 20,
+			mana: 5,
 			strength: 1,
+			speed: 100,
+		},
+		scalers: {
+			variance: 1,
+			exp: 1,
+			health: 1,
+			mana: 1,
+			strength: 1,
+			speed: 1,
+		},
+	},
+	{
+		name: 'Rot Worm',
+		base: {
+			exp: 3,
+			health: 10,
+			mana: 10,
+			strength: 1,
+			speed: 150,
+		},
+		scalers: {
+			variance: 1,
+			exp: 1,
+			health: 1,
+			mana: 1,
+			strength: 1,
+			speed: 1,
+		},
+	},
+	{
+		name: 'Bat',
+		base: {
+			exp: 2,
+			health: 5,
+			mana: 5,
+			strength: 1,
+			speed: 200,
+		},
+		scalers: {
+			variance: 1,
+			exp: 1,
+			health: 1,
+			mana: 1,
+			strength: 1,
+			speed: 1,
 		},
 	},
 ];

@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as allActions from '../actions/index';
 
+import './FightWindow.scss';
+
 import Player from './Player';
 
 class ConnectedFightWindow extends Component {
 	constructor(props) {
 		super(props);
 
-		console.log(props);
+		console.log('ConnectedFightWindow props', props);
 
 		// props.newBattle();
 	}
@@ -29,22 +31,32 @@ class ConnectedFightWindow extends Component {
 
 	render() {
 		const {
-			player, enemies, levelUps, newBattle,
+			player,
+			enemies,
+			levelUps,
+			newBattle,
 		} = this.props;
 
 		return (
-			<div>
-				<h1>RPG Game</h1>
-				<button onClick={newBattle} type="button">New Battle</button>
-				<div className="characters">
-					{enemies && enemies.length ? enemies.map((enemy) => (<Player key={enemy.id} player={enemy} isEnemey />)) : null }
+			<div className="fight-window">
+				<header>
+					<h1>RPG Game</h1>
+
+					<button onClick={newBattle} type="button">New Battle</button>
+				</header>
+
+				<div className="characters characters--player">
+					<Player player={player} levelUps={levelUps} />
 				</div>
-				<p>vs</p>
-				<div className="characters">
-					<Player player={player} />
+
+				<div className="characters characters--enemies">
+					{enemies && enemies.length ? enemies.map((enemy) => (
+						<Player key={enemy.id} player={enemy} isEnemey />
+					)) : null }
 				</div>
+
 				{levelUps ? (
-					<div>
+					<div className="level-ups">
 						<p>You have {levelUps} new levels to spend!</p>
 						<button onClick={this.levelUpHealth} type="button">Health ({player.health})</button>
 						<button onClick={this.levelUpStrength} type="button">Strength ({player.strength})</button>
@@ -68,7 +80,7 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = (state) => {
-	console.log('rootReducer', state);
+	console.log('mapStateToProps', state);
 	return {
 		player: state.rootReducer.player,
 		enemies: state.rootReducer.enemies,

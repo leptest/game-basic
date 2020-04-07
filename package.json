@@ -22,7 +22,7 @@
     "redux": "4.0.5"
   },
   "devDependencies": {
-    "@leptest/eslint-config-leptest": "1.0.4",
+    "@leptest/eslint-config-leptest": "1.0.2",
     "prettier": "2.0.4",
     "sass-lint": "1.13.1",
     "stylelint": "13.3.0",

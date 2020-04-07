@@ -20,22 +20,20 @@ const initialState = {
 	player: {
 		id: 1,
 		icon: '/images/players/player.svg',
-		name: 'Daniel 1',
+		name: 'Daniel',
 		level: 1,
 		exp: 0,
-		health: 10,
-		maxHealth: 10,
+		health: 20,
+		maxHealth: 20,
+		mana: 5,
+		maxMana: 10,
 		strength: 2,
+		speed: 200,
 		isDead: false,
 		slots: [],
 		critChance: 0.2,
 	},
-	enemies: [
-		// Mob(1, 'Demon', randomIntegerInRange(1, 3)),
-		// Mob(2, 'Bat', randomIntegerInRange(1, 3)),
-		// Mob(3, 'Bat', randomIntegerInRange(1, 3)),
-		// Mob(4, 'Demon', randomIntegerInRange(1, 3)),
-	],
+	enemies: [],
 	levelUps: 0,
 };
 
@@ -57,9 +55,10 @@ const rootReducer = (state = initialState, action) => {
 		const numEnemies = randomIntegerInRange(1, 4);
 		const enemies = [];
 
-		for (let i = 0; i < numEnemies; i++) {
+		for (let i = 0; i < numEnemies; i += 1) {
+			const mobLevel = state.player.level; // randomIntegerInRange(1, 3)
 			const randomEnemy = MONSTER_TYPES[Math.floor(Math.random() * MONSTER_TYPES.length)].name;
-			enemies.push(Mob(i, randomEnemy, randomIntegerInRange(1, 3)));
+			enemies.push(Mob(i, randomEnemy, mobLevel));
 		}
 
 		return {
@@ -131,6 +130,17 @@ const rootReducer = (state = initialState, action) => {
 
 		enemy.health = newHealth;
 		enemy.isDead = isDead;
+		enemy.mana -= 1;
+
+		// TODO: calc damange from mob -> player
+		let newPlayerIsDead = false;
+		let newPlayerHealth = player.health - enemy.strength;
+		const newPlayerMana = player.mana - 1;
+
+		if (newPlayerHealth <= 0) {
+			newPlayerIsDead = true;
+			newPlayerHealth = 0;
+		}
 
 		// const newEnemies = [...cloneDeep(state.enemies)];
 		// newEnemies.push({
@@ -147,6 +157,9 @@ const rootReducer = (state = initialState, action) => {
 				...cloneDeep(player),
 				level: newLevel,
 				exp: newExp,
+				health: newPlayerHealth,
+				isDead: newPlayerIsDead,
+				mana: newPlayerMana,
 			},
 			levelUps,
 		};

@@ -1,13 +1,12 @@
-.health-bar {
+.speed-bar {
 	border: 1px solid black;
 	height: 20px;
 	width: 100%;
-	background-color: red;
-	color: white;
+	background-color: lightgrey;
 	position: relative;
 
 	.bar {
-		background-color: green;
+		background-color: yellow;
 		display: block;
 		position: absolute;
 		top: 0;

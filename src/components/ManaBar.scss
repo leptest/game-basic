@@ -1,0 +1,36 @@
+.mana-bar {
+	border: 1px solid black;
+	height: 20px;
+	width: 100%;
+	background-color: lightgrey;
+	color: white;
+	position: relative;
+	margin-top: 2px;
+
+	// background-image: url('/images/swirl2.jpg');
+	// background-size: 200px auto;
+	// background-position: left center;
+	// background-blend-mode: hard-light;
+
+	.bar {
+		background-color: blue;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: auto;
+		z-index: 1;
+		transition: width 400ms linear;
+
+		// background-image: url('/images/swirl2.jpg');
+		// background-size: cover;
+		// background-position: center center;
+		// background-blend-mode: overlay;
+	}
+
+	.text {
+		position: relative;
+		z-index: 2;
+	}
+}
