@@ -62,6 +62,10 @@ class ConnectedFightWindow extends Component {
 						<button onClick={this.levelUpStrength} type="button">Strength ({player.strength})</button>
 					</div>
 				) : null }
+
+				<footer>
+					<button className="button--large" style={{ float: 'right' }} onClick={newBattle} type="button">Next Fight</button>
+				</footer>
 			</div>
 		);
 	}

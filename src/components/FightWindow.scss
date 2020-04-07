@@ -11,6 +11,10 @@
 	header {
 		flex: 0 0 100%;
 	}
+
+	footer {
+		flex: 0 0 100%;
+	}
 }
 
 
@@ -24,4 +28,10 @@
 
 .level-ups {
 	flex: 0 0 100%;
+}
+
+
+.button--large {
+	font-size: 24px;
+	padding: 0.5em;
 }
