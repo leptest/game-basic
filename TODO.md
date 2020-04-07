@@ -1,13 +1,29 @@
+## TODO
+* starting/home screen
+* death screen
+* win screen
+
 
 * reset health/mana on new battle
-* get health and mana potions working
+* if trying to attack with no mana, fail attack, but mob deals damage back? (realistic)
+
+
+* ~~get health and mana potions working~~
+* potions to have charges (that reset each battle)
+
+
 * add basic attacks (single, aoe)
+
+
 * add loot if you win battle
 * add basic inventory
+
+
 * add turn order calculation
 * add turn system
 
 
-
-BUGS
+## BUGS
 * if you level up twice on one creature, not working. use totalExp prop
+* can still attack when dead
+* creatures can still attack back when no mana
