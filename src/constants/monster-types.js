@@ -1,5 +1,23 @@
 const MONSTER_TYPES = [
 	{
+		name: 'The Sausage King',
+		base: {
+			exp: 50,
+			health: 100,
+			mana: 250,
+			strength: 10,
+			speed: 1000,
+		},
+		scalers: {
+			variance: 1,
+			exp: 1,
+			health: 1,
+			mana: 1,
+			strength: 1,
+			speed: 1,
+		},
+	},
+	{
 		name: 'Demon',
 		base: {
 			exp: 5,

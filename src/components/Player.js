@@ -54,8 +54,16 @@ const ConnectedPlayer = (props) => {
 
 			{/* ITEMS */}
 			{!isEnemey ? (
-				<Items />
+				<>
+					<br />
+					<p>Potions:</p>
+					<Items />
+					<br />
+					<p>Items:</p>
+					<p>...</p>
+				</>
 			) : null}
+
 		</div>
 	);
 };

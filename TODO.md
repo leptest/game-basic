@@ -6,3 +6,8 @@
 * add basic inventory
 * add turn order calculation
 * add turn system
+
+
+
+BUGS
+* if you level up twice on one creature, not working. use totalExp prop

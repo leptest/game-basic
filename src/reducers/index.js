@@ -5,7 +5,11 @@ import cloneDeep from 'lodash.clonedeep';
 import Mob from '../classes/mob';
 
 import {
-	ADD_ARTICLE, ATTACK_ENEMY, LEVEL_UP, NEW_BATTLE,
+	ADD_ARTICLE,
+	ATTACK_ENEMY,
+	LEVEL_UP,
+	NEW_BATTLE,
+	USE_POTION,
 } from '../constants/action-types';
 import MONSTER_TYPES from '../constants/monster-types';
 import { randomIntegerInRange } from '../utils/utils';
@@ -48,6 +52,45 @@ const rootReducer = (state = initialState, action) => {
 				action.payload,
 			],
 		};
+	}
+
+	case USE_POTION: {
+		console.log('USE_POTION', action.payload);
+
+
+		// Mana
+		let newPlayerMana = state.player.mana;
+		if (action.payload.type === 'mana') {
+			newPlayerMana += 10;
+		}
+		if (newPlayerMana > state.player.maxMana) {
+			newPlayerMana = state.player.maxMana;
+		}
+
+		// Health
+		let newPlayerHealth = state.player.health;
+		if (action.payload.type === 'health') {
+			newPlayerHealth += 10;
+		}
+		if (newPlayerHealth > state.player.maxHealth) {
+			newPlayerHealth = state.player.maxHealth;
+		}
+
+		return {
+			...cloneDeep(state),
+			player: {
+				...cloneDeep(state.player),
+				mana: newPlayerMana,
+				health: newPlayerHealth,
+			},
+		};
+		// return {
+		// 	...cloneDeep(state),
+		// 	player: [
+		// 		...cloneDeep(state.articles),
+		// 		action.payload,
+		// 	],
+		// };
 	}
 
 	case NEW_BATTLE: {
@@ -93,6 +136,12 @@ const rootReducer = (state = initialState, action) => {
 		const enemy = state.enemies.filter((e) => e.id === action.payload)[0];
 		const { player } = state;
 
+		// < spell.cost
+		if (player.mana < 1) {
+			return {
+				...cloneDeep(state),
+			};
+		}
 		let damageModifier = 1;
 
 		if (Math.random() < player.critChance) {
@@ -135,7 +184,11 @@ const rootReducer = (state = initialState, action) => {
 		// TODO: calc damange from mob -> player
 		let newPlayerIsDead = false;
 		let newPlayerHealth = player.health - enemy.strength;
-		const newPlayerMana = player.mana - 1;
+		let newPlayerMana = player.mana - 1;
+
+		if (newPlayerMana < 0) {
+			newPlayerMana = 0;
+		}
 
 		if (newPlayerHealth <= 0) {
 			newPlayerIsDead = true;

@@ -1,5 +1,9 @@
 import {
-	ADD_ARTICLE, ATTACK_ENEMY, LEVEL_UP, NEW_BATTLE,
+	ADD_ARTICLE,
+	ATTACK_ENEMY,
+	LEVEL_UP,
+	NEW_BATTLE,
+	USE_POTION,
 } from '../constants/action-types';
 
 export function addArticle(payload) {
@@ -16,4 +20,8 @@ export function levelUp(payload) {
 
 export function newBattle(payload) {
 	return { type: NEW_BATTLE, payload };
+}
+
+export function usePotion(payload) {
+	return { type: USE_POTION, payload };
 }

@@ -1,16 +1,52 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as allActions from '../actions/index';
 
 import './Items.scss';
 
-const Items = () => (
-	<div className="items">
-		<div className="item potion--health">
-			<img src="./images/items/potion--health.svg" alt="health potion" />
+const ConnectedItems = ({ usePotion }) => {
+	console.log('Items usePotion', usePotion);
+
+	const useHealthPotion = () => {
+		usePotion({
+			type: 'health',
+			amount: 20,
+		});
+	};
+
+	const useManaPotion = () => {
+		usePotion({
+			type: 'mana',
+			amount: 10,
+		});
+	};
+
+	return (
+		<div className="items">
+			<button className="item potion--health" onClick={useHealthPotion} type="button">
+				<img src="./images/items/potion--health.svg" alt="health potion" />
+			</button>
+			<button className="item potion--mana" onClick={useManaPotion} type="button">
+				<img src="./images/items/potion--mana.svg" alt="mana potion" />
+			</button>
 		</div>
-		<div className="item potion--mana">
-			<img src="./images/items/potion--mana.svg" alt="mana potion" />
-		</div>
-	</div>
-);
+	);
+};
+
+const mapDispatchToProps = {
+	...allActions,
+};
+
+const mapStateToProps = () => ({
+	// player: state.player,
+	// enemy: state.enemy,
+	// enemy2: state.enemy2,
+	// levelUps: state.levelUps,
+});
+
+const Items = connect(
+	mapStateToProps,
+	mapDispatchToProps,
+)(ConnectedItems);
 
 export default Items;
