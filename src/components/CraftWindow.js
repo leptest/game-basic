@@ -74,7 +74,7 @@ class ConnectedCraftWindow extends Component {
 				part3 = '';
 				break;
 			case 'instant-over-time':
-				part3 = ' every Ys for Xs';
+				part3 = ' over Y seconds';
 				break;
 			default:
 				spellDescription = 'default';
