@@ -7,13 +7,13 @@ import './FightWindow.scss';
 import Player from './Player';
 
 class ConnectedFightWindow extends Component {
-	constructor(props) {
-		super(props);
-
-		console.log('ConnectedFightWindow props', props);
-
-		// props.newBattle();
-	}
+	// constructor(props) {
+	// 	super(props);
+	//
+	// 	// console.log('ConnectedFightWindow props', props);
+	//
+	// 	// props.newBattle();
+	// }
 
 	levelUpHealth = (event) => {
 		event.preventDefault();
@@ -40,9 +40,8 @@ class ConnectedFightWindow extends Component {
 		return (
 			<div className="fight-window">
 				<header>
-					<h1>RPG Game</h1>
-
-					<button onClick={newBattle} type="button">New Battle</button>
+					<br />
+					<h1>Battle!</h1>
 				</header>
 
 				<div className="characters characters--player">
@@ -58,13 +57,14 @@ class ConnectedFightWindow extends Component {
 				{levelUps ? (
 					<div className="level-ups">
 						<p>You have {levelUps} new levels to spend!</p>
-						<button onClick={this.levelUpHealth} type="button">Health ({player.health})</button>
+						<button className="button" onClick={this.levelUpHealth} type="button">Health ({player.health})</button>
 						<button onClick={this.levelUpStrength} type="button">Strength ({player.strength})</button>
 					</div>
 				) : null }
 
 				<footer>
-					<button className="button--large" style={{ float: 'right' }} onClick={newBattle} type="button">Next Fight</button>
+					<a className="button" style={{ float: 'left' }} href="/">Home</a>
+					<button className="button" style={{ float: 'right' }} onClick={newBattle} type="button">Next Fight</button>
 				</footer>
 			</div>
 		);
@@ -83,14 +83,11 @@ const mapDispatchToProps = {
 	...allActions,
 };
 
-const mapStateToProps = (state) => {
-	console.log('mapStateToProps', state);
-	return {
-		player: state.rootReducer.player,
-		enemies: state.rootReducer.enemies,
-		levelUps: state.rootReducer.levelUps,
-	};
-};
+const mapStateToProps = (state) => ({
+	player: state.rootReducer.player,
+	enemies: state.rootReducer.enemies,
+	levelUps: state.rootReducer.levelUps,
+});
 
 const FightWindow = connect(
 	mapStateToProps,

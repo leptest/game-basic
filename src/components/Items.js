@@ -5,7 +5,7 @@ import * as allActions from '../actions/index';
 import './Items.scss';
 
 const ConnectedItems = ({ usePotion }) => {
-	console.log('Items usePotion', usePotion);
+	// console.log('Items usePotion', usePotion);
 
 	const useHealthPotion = () => {
 		usePotion({

@@ -1,9 +1,10 @@
 .level-bar {
 	border: 1px solid black;
-	height: 20px;
+	// height: 20px;
 	width: 100%;
 	background-color: lightgrey;
 	position: relative;
+	text-align: center;
 
 	.bar {
 		background-color: purple;

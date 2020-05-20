@@ -1,10 +1,11 @@
 .health-bar {
 	border: 1px solid black;
-	height: 20px;
+	// height: 18px;
 	width: 100%;
 	background-color: red;
 	color: white;
 	position: relative;
+	text-align: center;
 
 	.bar {
 		background-color: green;

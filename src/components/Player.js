@@ -38,12 +38,18 @@ const ConnectedPlayer = (props) => {
 
 	return (
 		<div className="character">
+			<div className="name-plate">
+				<img className="character__icon" src={icon} alt="" />
+				<HealthBar health={health} maxHealth={maxHealth} />
+				<ManaBar mana={mana} maxMana={maxMana} />
+				<p className="character__name"><strong>{name} - Lvl {level}</strong></p>
+			</div>
+
 			<SpeedBar speed={speed} maxSpeed={2000} />
-			<img className="character__icon" src={icon} alt="" />
-			<HealthBar health={health} maxHealth={maxHealth} />
-			<ManaBar mana={mana} maxMana={maxMana} />
-			<p><strong>{name} - Lvl {level}</strong></p>
-			<p>Str {strength} - Spd {speed}</p>
+			<p>Str: {strength}</p>
+			<p>Spd: {speed}</p>
+			<p>Exp: {exp}</p>
+
 			{!isEnemey ? (
 				<LevelBar exp={exp} maxExp={level * 10} levelUps={levelUps} />
 			) : (

@@ -15,8 +15,8 @@
 * add basic attacks (single, aoe)
 
 
-* add loot if you win battle
 * add basic inventory
+* add loot if you win battle
 
 
 * add turn order calculation
@@ -24,6 +24,6 @@
 
 
 ## BUGS
-* if you level up twice on one creature, not working. use totalExp prop
+* if you level up twice on one creature, not working. use totalExp (and unspentExp?) prop
 * can still attack when dead
 * creatures can still attack back when no mana

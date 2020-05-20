@@ -5,13 +5,9 @@
 	align-items: center;
 }
 
-body {
-	text-align: center;
-}
-
 .character {
 	flex: 0 0 auto;
-	width: 150px;
+	width: 200px;
 	// height: 200px;
 	border: 1px solid green;
 	background-color: #ffffff;
@@ -20,7 +16,35 @@ body {
 	padding: 10px;
 }
 
-.character__icon {
-	width: 150px;
-	height: 150px;
+.name-plate {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	// border: 1px solid red;
+	display: grid;
+	grid-template-columns: 60px auto;
+	grid-template-rows: 19px 19px 19px;
+	grid-template-areas:
+		"icon name"
+		"icon health"
+		"icon mana";
+	grid-gap: 1px 2px;
+
+	.health-bar {
+		grid-area: health;
+	}
+
+	.mana-bar {
+		grid-area: mana;
+	}
+
+	.character__icon {
+		grid-area: icon;
+		// width: 80px;
+		// height: 80px;
+	}
+
+	.character__name {
+		grid-area: name;
+		margin: 0;
+	}
 }
