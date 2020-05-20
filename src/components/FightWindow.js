@@ -63,7 +63,6 @@ class ConnectedFightWindow extends Component {
 				) : null }
 
 				<footer>
-					<a className="button" style={{ float: 'left' }} href="/">Home</a>
 					<button className="button" style={{ float: 'right' }} onClick={newBattle} type="button">Next Fight</button>
 				</footer>
 			</div>

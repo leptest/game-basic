@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router'; // react-router v4/v5
 import { ConnectedRouter } from 'connected-react-router';
 import configureStore, { history } from './store/index';
 import HomeWindow from './components/HomeWindow';
+import CraftWindow from './components/CraftWindow';
 import FightWindow from './components/FightWindow';
 
 import './index.scss';
@@ -29,8 +30,16 @@ ReactDOM.render(
 	<Provider store={store}>
 		<ConnectedRouter history={history}> { /* place ConnectedRouter under Provider */ }
 			<> { /* your usual react-router v4/v5 routing */ }
+				<nav>
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/craft">Craft</a></li>
+						<li><a href="/fight">Fight</a></li>
+					</ul>
+				</nav>
 				<Switch>
 					<Route exact path="/" component={HomeWindow} />
+					<Route exact path="/craft" component={CraftWindow} />
 					<Route exact path="/fight" component={FightWindow} />
 					<Route render={() => (<div>Miss</div>)} />
 				</Switch>

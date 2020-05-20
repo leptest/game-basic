@@ -1,0 +1,22 @@
+.craft-window {
+	padding: 1em;
+}
+
+.crafted-item {
+	margin: 1em 0;
+	border: 5px solid green;
+}
+
+
+.crafts {
+	display: flex;
+	justify-content: space-between;
+}
+
+.craft {
+	flex: 0 0 20%;
+}
+
+label {
+	display: block;
+}
