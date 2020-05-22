@@ -12,10 +12,10 @@ class ConnectedCraftWindow extends Component {
 
 		this.state = {
 			spell: {
-				rune: '',
-				orb: '',
-				gem: '',
-				essence: '',
+				rune: 'instant',
+				orb: 'single',
+				gem: 'damage',
+				essence: 'physical',
 			},
 		};
 
@@ -23,13 +23,15 @@ class ConnectedCraftWindow extends Component {
 	}
 
 	onChange = (event) => {
-		event.preventDefault();
-		console.log('onChange', event.target.getAttribute('name'));
+		const key = event.target.getAttribute('name');
+		const { value } = event.target;
+
+		console.log('onChange', key, value);
 
 		this.setState((prevState) => ({
 			spell: {
 				...prevState.spell,
-				[event.target.getAttribute('name')]: event.target.value,
+				[key]: value,
 			},
 		}), () => { console.log(this.state); });
 	}
@@ -152,8 +154,8 @@ class ConnectedCraftWindow extends Component {
 				<div className="crafts">
 					<div className="craft">
 						<label htmlFor="gem">gem</label>
-						<select name="gem" id="gem" onChange={this.onChange} value={gem}>
-							<option value="" disabled>empty</option>
+						<select name="gem" id="gem" onChange={this.onChange} value={spell.gem}>
+							{/* <option value="" disabled>empty</option> */}
 							<option value="damage">damage</option>
 							<option value="heal">heal</option>
 							{/* <option value="stun">stun</option>
@@ -163,16 +165,16 @@ class ConnectedCraftWindow extends Component {
 					</div>
 					<div className="craft">
 						<label htmlFor="essence">essence</label>
-						<select name="essence" id="essence" onChange={this.onChange} value={essence}>
-							<option value="" disabled>empty</option>
+						<select name="essence" id="essence" onChange={this.onChange} value={spell.essence}>
+							{/* <option value="" disabled>empty</option> */}
 							<option value="physical">physical</option>
 							<option value="magic">magic</option>
 						</select>
 					</div>
 					<div className="craft">
 						<label htmlFor="rune">rune</label>
-						<select name="rune" id="rune" onChange={this.onChange} value={rune}>
-							<option value="" disabled>empty</option>
+						<select name="rune" id="rune" onChange={this.onChange} value={spell.rune}>
+							{/* <option value="" disabled>empty</option> */}
 							<option value="instant">instant</option>
 							<option value="instant-over-time">instant-over-time</option>
 							{/* <option value="channel">channel</option>
@@ -181,8 +183,8 @@ class ConnectedCraftWindow extends Component {
 					</div>
 					<div className="craft">
 						<label htmlFor="orb">orb</label>
-						<select name="orb" id="orb" onChange={this.onChange} value={orb}>
-							<option value="" disabled>empty</option>
+						<select name="orb" id="orb" onChange={this.onChange} value={spell.orb}>
+							{/* <option value="" disabled>empty</option> */}
 							<option value="single">single</option>
 							{/* <option value="cone">cone</option> */}
 							<option value="aoe">aoe</option>
