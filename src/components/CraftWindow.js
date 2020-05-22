@@ -11,10 +11,12 @@ class ConnectedCraftWindow extends Component {
 		console.log('ConnectedCraftWindow props', props);
 
 		this.state = {
-			rune: '',
-			orb: '',
-			gem: '',
-			essence: '',
+			spell: {
+				rune: '',
+				orb: '',
+				gem: '',
+				essence: '',
+			},
 		};
 
 		// props.newBattle();
@@ -24,25 +26,21 @@ class ConnectedCraftWindow extends Component {
 		event.preventDefault();
 		console.log('onChange', event.target.getAttribute('name'));
 
-		this.setState({
-			[event.target.getAttribute('name')]: event.target.value,
-		}, () => { console.log(this.state); });
+		this.setState((prevState) => ({
+			spell: {
+				...prevState.spell,
+				[event.target.getAttribute('name')]: event.target.value,
+			},
+		}), () => { console.log(this.state); });
 	}
 
-	render() {
-		// const {
-		// 	player,
-		// 	enemies,
-		// 	levelUps,
-		// 	newBattle,
-		// } = this.props;
-
+	generateSpellDescription = (spell) => {
 		const {
 			rune,
 			orb,
 			gem,
 			essence,
-		} = this.state;
+		} = spell;
 
 		let spellDescription = '';
 
@@ -130,6 +128,21 @@ class ConnectedCraftWindow extends Component {
 		default:
 			spellDescription = 'default';
 		}
+		return spellDescription;
+	}
+
+	render() {
+		// const {
+		// 	player,
+		// 	enemies,
+		// 	levelUps,
+		// 	newBattle,
+		// } = this.props;
+
+		const { spell } = this.state;
+
+		const spellDescription = this.generateSpellDescription(spell);
+
 
 		return (
 			<div className="craft-window">
