@@ -16,10 +16,10 @@ class ConnectedCraftWindow extends Component {
 				orb: 'single',
 				gem: 'damage',
 				essence: 'physical',
+				icon: '',
 			},
+			savedSpells: [],
 		};
-
-		// props.newBattle();
 	}
 
 	onChange = (event) => {
@@ -29,11 +29,26 @@ class ConnectedCraftWindow extends Component {
 		console.log('onChange', key, value);
 
 		this.setState((prevState) => ({
+			...prevState,
 			spell: {
 				...prevState.spell,
 				[key]: value,
 			},
 		}), () => { console.log(this.state); });
+	}
+
+	saveSpell = () => {
+		this.setState((prevState) => {
+			console.log('prevState');
+			const { savedSpells } = prevState;
+
+			savedSpells.push(prevState.spell);
+
+			return {
+				...prevState,
+				savedSpells,
+			};
+		}, () => { console.log(this.state); });
 	}
 
 	generateSpellDescription = (spell) => {
@@ -141,60 +156,77 @@ class ConnectedCraftWindow extends Component {
 		// 	newBattle,
 		// } = this.props;
 
-		const { spell } = this.state;
+		const { spell, savedSpells } = this.state;
 
 		const spellDescription = this.generateSpellDescription(spell);
 
 
 		return (
-			<div className="craft-window">
-				<header>
-					<h1>Craft Window</h1>
-				</header>
-				<div className="crafts">
-					<div className="craft">
-						<label htmlFor="gem">gem</label>
-						<select name="gem" id="gem" onChange={this.onChange} value={spell.gem}>
-							{/* <option value="" disabled>empty</option> */}
-							<option value="damage">damage</option>
-							<option value="heal">heal</option>
-							{/* <option value="stun">stun</option>
+			<div>
+				<div className="craft-window">
+					<header>
+						<h1>Craft Window</h1>
+					</header>
+					<div className="crafts">
+						<div className="craft">
+							<label htmlFor="gem">gem</label>
+							<select name="gem" id="gem" onChange={this.onChange} value={spell.gem}>
+								{/* <option value="" disabled>empty</option> */}
+								<option value="damage">damage</option>
+								<option value="heal">heal</option>
+								{/* <option value="stun">stun</option>
 						<option value="silence">silence</option>
 						<option value="stat-change">stat-change</option> */}
-						</select>
-					</div>
-					<div className="craft">
-						<label htmlFor="essence">essence</label>
-						<select name="essence" id="essence" onChange={this.onChange} value={spell.essence}>
-							{/* <option value="" disabled>empty</option> */}
-							<option value="physical">physical</option>
-							<option value="magic">magic</option>
-						</select>
-					</div>
-					<div className="craft">
-						<label htmlFor="rune">rune</label>
-						<select name="rune" id="rune" onChange={this.onChange} value={spell.rune}>
-							{/* <option value="" disabled>empty</option> */}
-							<option value="instant">instant</option>
-							<option value="instant-over-time">instant-over-time</option>
-							{/* <option value="channel">channel</option>
+							</select>
+						</div>
+						<div className="craft-seperator">+</div>
+						<div className="craft">
+							<label htmlFor="essence">essence</label>
+							<select name="essence" id="essence" onChange={this.onChange} value={spell.essence}>
+								{/* <option value="" disabled>empty</option> */}
+								<option value="physical">physical</option>
+								<option value="magic">magic</option>
+							</select>
+						</div>
+						<div className="craft-seperator">+</div>
+						<div className="craft">
+							<label htmlFor="rune">rune</label>
+							<select name="rune" id="rune" onChange={this.onChange} value={spell.rune}>
+								{/* <option value="" disabled>empty</option> */}
+								<option value="instant">instant</option>
+								<option value="instant-over-time">instant-over-time</option>
+								{/* <option value="channel">channel</option>
 							<option value="channel-over-time">channel-over-time</option> */}
-						</select>
+							</select>
+						</div>
+						<div className="craft-seperator">+</div>
+						<div className="craft">
+							<label htmlFor="orb">orb</label>
+							<select name="orb" id="orb" onChange={this.onChange} value={spell.orb}>
+								{/* <option value="" disabled>empty</option> */}
+								<option value="single">single</option>
+								{/* <option value="cone">cone</option> */}
+								<option value="aoe">aoe</option>
+							</select>
+						</div>
+						<div className="craft-seperator">=</div>
+						<div className="crafted-item">
+							<p>{spellDescription}</p>
+							<p>Cooldown:</p>
+							<p>Mana cost:</p>
+						</div>
 					</div>
-					<div className="craft">
-						<label htmlFor="orb">orb</label>
-						<select name="orb" id="orb" onChange={this.onChange} value={spell.orb}>
-							{/* <option value="" disabled>empty</option> */}
-							<option value="single">single</option>
-							{/* <option value="cone">cone</option> */}
-							<option value="aoe">aoe</option>
-						</select>
-					</div>
+					<button className="button" type="button" onClick={this.saveSpell}>Save</button>
 				</div>
-				<div className="crafted-item">
-					<p>{spellDescription}</p>
-					<p>Cooldown:</p>
-					<p>Mana cost:</p>
+				<p>crafted spells</p>
+				<div className="crafted-spells">
+					{savedSpells && savedSpells.length ? savedSpells.map((savedSpell, i) => (
+						<div className="crafted-item" key={i}>
+							<img className="character__icon" src={savedSpell.icon} alt="" />
+							<p>{this.generateSpellDescription(savedSpell)}</p>
+							<small>{savedSpell.rune}, {savedSpell.orb}, {savedSpell.essence}, {savedSpell.gem}</small>
+						</div>
+					)) : null}
 				</div>
 			</div>
 		);
