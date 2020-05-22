@@ -7,7 +7,8 @@ import { Route, Switch } from 'react-router'; // react-router v4/v5
 import { ConnectedRouter } from 'connected-react-router';
 import configureStore, { history } from './store/index';
 import HomeWindow from './components/HomeWindow';
-import CraftWindow from './components/CraftWindow';
+import CraftSpellsWindow from './components/CraftSpellsWindow';
+import CraftItemsWindow from './components/CraftItemsWindow';
 import FightWindow from './components/FightWindow';
 
 import './index.scss';
@@ -33,13 +34,15 @@ ReactDOM.render(
 				<nav>
 					<ul>
 						<li><a href="/">Home</a></li>
-						<li><a href="/craft">Craft</a></li>
+						<li><a href="/craft-spells">Craft Spells</a></li>
+						<li><a href="/craft-items">Craft Items</a></li>
 						<li><a href="/fight">Fight</a></li>
 					</ul>
 				</nav>
 				<Switch>
 					<Route exact path="/" component={HomeWindow} />
-					<Route exact path="/craft" component={CraftWindow} />
+					<Route exact path="/craft-spells" component={CraftSpellsWindow} />
+					<Route exact path="/craft-items" component={CraftItemsWindow} />
 					<Route exact path="/fight" component={FightWindow} />
 					<Route render={() => (<div>Miss</div>)} />
 				</Switch>

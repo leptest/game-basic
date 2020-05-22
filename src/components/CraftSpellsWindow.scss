@@ -1,0 +1,37 @@
+.craft-window {
+	padding: 1em;
+}
+
+.crafts {
+	display: flex;
+	justify-content: space-between;
+}
+
+.craft {
+	flex: 0 0 15%;
+}
+
+.crafted-item {
+	flex: 0 0 24%;
+	border: 2px solid green;
+	padding: 5px;
+}
+
+.craft-seperator {
+	flex: 0 0 4%;
+}
+
+label {
+	display: block;
+}
+
+.crafted-spells {
+	display: flex;
+	// justify-content: space-between;
+	flex-wrap: wrap;
+
+	> * {
+		flex: 0 0 31%;
+		margin: 1%;
+	}
+}

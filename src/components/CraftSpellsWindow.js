@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as allActions from '../actions/index';
 
-import './CraftWindow.scss';
+import './CraftSpellsWindow.scss';
 
-class ConnectedCraftWindow extends Component {
+class ConnectedCraftSpellsWindow extends Component {
 	constructor(props) {
 		super(props);
 
-		console.log('ConnectedCraftWindow props', props);
+		console.log('ConnectedCraftSpellsWindow props', props);
 
 		this.state = {
 			spell: {
@@ -165,7 +165,7 @@ class ConnectedCraftWindow extends Component {
 			<div>
 				<div className="craft-window">
 					<header>
-						<h1>Craft Window</h1>
+						<h1>Craft Spells Window</h1>
 					</header>
 					<div className="crafts">
 						<div className="craft">
@@ -216,6 +216,7 @@ class ConnectedCraftWindow extends Component {
 							<p>Mana cost:</p>
 						</div>
 					</div>
+
 					<button className="button" type="button" onClick={this.saveSpell}>Save</button>
 				</div>
 				<p>crafted spells</p>
@@ -251,9 +252,9 @@ const mapStateToProps = (state) => ({
 	levelUps: state.rootReducer.levelUps,
 });
 
-const CraftWindow = connect(
+const CraftSpellsWindow = connect(
 	mapStateToProps,
 	mapDispatchToProps,
-)(ConnectedCraftWindow);
+)(ConnectedCraftSpellsWindow);
 
-export default CraftWindow;
+export default CraftSpellsWindow;
