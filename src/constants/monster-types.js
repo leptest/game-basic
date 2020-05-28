@@ -11,7 +11,7 @@ const MONSTER_TYPES = [
 		scalers: {
 			variance: 1,
 			exp: 1,
-			health: 1,
+			health: .5,
 			mana: 1,
 			strength: 1,
 			speed: 1,
