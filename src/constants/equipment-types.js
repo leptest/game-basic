@@ -21,77 +21,30 @@ const EQUIPMENT_TYPES = {
 			id: 4,
 			name: 'Plate Armour',
 			armour: 9,
-			resistances: [
-				{
-					type: 'fire',
-					value: 3,
-				},
-			],
 		},
 		{
 			id: 5,
-			name: 'Golden Armour',
+			name: 'Gold Armour',
 			armour: 14,
-			resistances: [
-				{
-					type: 'poison',
-					value: 5,
-				},
-				{
-					type: 'ice',
-					value: 1,
-				},
-			],
 		},
 		{
 			id: 6,
 			name: 'Magic Plate Armour',
 			armour: 17,
-			resistances: [],
 		},
 	],
 	trinkets: [
 		{
 			id: 7,
-			name: 'Ring of Wisdom',
-			stat: [
-				{
-					type: 'intelligence',
-					modifier: 'increase',
-					value: 3,
-					unit: 'flat',
-				},
-				{
-					type: 'critChance',
-					modifier: 'decrease',
-					value: 5,
-					unit: 'percent',
-				},
-			],
+			name: 'Glacier Amulet',
 		},
 		{
 			id: 8,
-			name: 'Brass Knuckles',
-			stat: [
-				{
-					type: 'strength',
-					modifier: 'increase',
-					value: 7,
-					unit: 'flat',
-				},
-			],
+			name: 'Garlic Necklace',
 		},
 		{
 			id: 9,
-			name: 'Mending Charm',
-			stat: [
-				{
-					type: 'magic',
-					modifier: 'increase',
-					value: 20,
-					unit: 'percent',
-				},
-			],
+			name: 'Platinum Amulet',
 		},
 	],
 };

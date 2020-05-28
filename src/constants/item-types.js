@@ -20,6 +20,3 @@ const ITEM_TYPES = [
 ];
 
 export default ITEM_TYPES;
-
-// Carlin Sword
-// Dagger

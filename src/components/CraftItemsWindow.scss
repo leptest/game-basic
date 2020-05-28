@@ -12,9 +12,22 @@
 }
 
 .crafted-item {
-	flex: 0 0 24%;
+	flex: 0 1 24%;
 	border: 2px solid green;
 	padding: 5px;
+
+	.item-icon {
+		float: left;
+	}
+
+	p {
+		margin-left: 40px;
+		margin-bottom: 0;
+	}
+
+	p + p {
+		margin-top: 7px;
+	}
 }
 
 .craft-seperator {
@@ -25,13 +38,37 @@ label {
 	display: block;
 }
 
-.crafted-spells {
+.crafted-items {
 	display: flex;
 	// justify-content: space-between;
 	flex-wrap: wrap;
 
 	> * {
-		flex: 0 0 31%;
+		flex: 0 0 23%;
 		margin: 1%;
 	}
+}
+
+.rarity {
+	border: 2px solid #e8e8e8;
+}
+
+.rarity-0 {
+	border-color: #e8e8e8;
+}
+
+.rarity-1 {
+	border-color: #1eff00;
+}
+
+.rarity-2 {
+	border-color: #0070ff;
+}
+
+.rarity-3 {
+	border-color: #a335ee;
+}
+
+.rarity-4 {
+	border-color: #ff8000;
 }
