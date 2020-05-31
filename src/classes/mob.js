@@ -17,6 +17,8 @@ const Mob = (id, type, level) => {
 		maxMana: Math.ceil(mobType.base.mana * mobType.scalers.mana * level * newVariance),
 		mana: Math.ceil(mobType.base.mana * mobType.scalers.mana * level * newVariance),
 		strength: Math.ceil(mobType.base.strength * mobType.scalers.strength * level * newVariance),
+		agility: Math.ceil(mobType.base.agility * mobType.scalers.agility * level * newVariance),
+		intelligence: Math.ceil(mobType.base.intelligence * mobType.scalers.intelligence * level * newVariance),
 		speed: Math.ceil(mobType.base.speed * mobType.scalers.speed * level * newVariance),
 		isDead: false,
 		slots: [],

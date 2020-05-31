@@ -19,14 +19,28 @@ class ConnectedFightWindow extends Component {
 		event.preventDefault();
 		console.log('levelUpHealth, this.props', this.props);
 		const { levelUp } = this.props;
-		levelUp({ health: 2 });
+		levelUp({ health: 15 });
 	}
 
 	levelUpStrength = (event) => {
 		event.preventDefault();
 		console.log('levelUpStrength, this.props', this.props);
 		const { levelUp } = this.props;
-		levelUp({ strength: 2 });
+		levelUp({ strength: 5 });
+	}
+
+	levelUpagility = (event) => {
+		event.preventDefault();
+		console.log('levelUpagility, this.props', this.props);
+		const { levelUp } = this.props;
+		levelUp({ agility: 5 });
+	}
+
+	levelUpintelligence = (event) => {
+		event.preventDefault();
+		console.log('levelUpintelligence, this.props', this.props);
+		const { levelUp } = this.props;
+		levelUp({ intelligence: 5 });
 	}
 
 	render() {
@@ -59,6 +73,9 @@ class ConnectedFightWindow extends Component {
 						<p>You have {levelUps} new levels to spend!</p>
 						<button className="button" onClick={this.levelUpHealth} type="button">Health ({player.health})</button>
 						<button onClick={this.levelUpStrength} type="button">Strength ({player.strength})</button>
+						<button onClick={this.levelUpagility} type="button">agility ({player.agility})</button>
+						<button onClick={this.levelUpintelligence} type="button">intelligence ({player.intelligence})</button>
+
 					</div>
 				) : null }
 

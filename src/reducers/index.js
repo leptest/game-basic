@@ -32,6 +32,8 @@ const initialState = {
 		mana: 5,
 		maxMana: 10,
 		strength: 2,
+		agility: 2,
+		intelligence: 2,
 		speed: 200,
 		isDead: false,
 		slots: [],
@@ -118,7 +120,12 @@ const rootReducer = (state = initialState, action) => {
 			newStats.health = state.player.health + action.payload.health;
 		} else if (action.payload.strength) {
 			newStats.strength = state.player.strength + action.payload.strength;
+		} else if (action.payload.agility) {
+			newStats.agility = state.player.agility + action.payload.agility;
+		} else if (action.payload.intelligence) {
+			newStats.intelligence = state.player.intelligence + action.payload.intelligence;
 		}
+		console.log(newStats);
 
 		return {
 			...cloneDeep(state),
@@ -185,6 +192,10 @@ const rootReducer = (state = initialState, action) => {
 		let newPlayerIsDead = false;
 		let newPlayerHealth = player.health - enemy.strength;
 		let newPlayerMana = player.mana - 1;
+		if (Math.random() < (player.agility / 100)) {
+		newPlayerHealth = player.health
+
+		}
 
 		if (newPlayerMana < 0) {
 			newPlayerMana = 0;

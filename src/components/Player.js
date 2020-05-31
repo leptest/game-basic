@@ -27,6 +27,8 @@ const ConnectedPlayer = (props) => {
 		maxMana,
 		speed,
 		strength,
+		agility,
+		intelligence,
 		isDead,
 		exp,
 		icon,
@@ -47,6 +49,8 @@ const ConnectedPlayer = (props) => {
 
 			<SpeedBar speed={speed} maxSpeed={2000} />
 			<p>Str: {strength}</p>
+			<p>Agi: {agility}</p>
+			<p>Int: {intelligence}</p>
 			<p>Spd: {speed}</p>
 			<p>Exp: {exp}</p>
 
