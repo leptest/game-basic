@@ -130,7 +130,10 @@ class ConnectedCraftItemsWindow extends Component {
 		// 	newBattle,
 		// } = this.props;
 
-		const { spell, savedItems } = this.state;
+		const {
+			// spell,
+			savedItems,
+		} = this.state;
 
 
 		return (

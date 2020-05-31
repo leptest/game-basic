@@ -48,3 +48,17 @@
 		margin: 0;
 	}
 }
+
+.player-stats {
+	> p {
+		margin: 0;
+	}
+
+	> * + p {
+		margin-top: 5px;
+	}
+}
+
+.player-items {
+	margin-top: 1em;
+}

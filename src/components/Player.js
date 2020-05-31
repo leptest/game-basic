@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as allActions from '../actions/index';
 import HealthBar from './HealthBar';
 import ManaBar from './ManaBar';
-import SpeedBar from './SpeedBar';
+// import SpeedBar from './SpeedBar';
 import LevelBar from './LevelBar';
 import Items from './Items';
 
@@ -47,31 +47,34 @@ const ConnectedPlayer = (props) => {
 				<p className="character__name"><strong>{name} - Lvl {level}</strong></p>
 			</div>
 
-			<SpeedBar speed={speed} maxSpeed={2000} />
-			<p>Str: {strength}</p>
-			<p>Agi: {agility}</p>
-			<p>Int: {intelligence}</p>
-			<p>Spd: {speed}</p>
-			<p>Exp: {exp}</p>
+			{/* <SpeedBar speed={speed} maxSpeed={2000} /> */}
+			<div className="player-stats">
+				<p>Str: {strength}</p>
+				<p>Agi: {agility}</p>
+				<p>Int: {intelligence}</p>
+				<p>Spd: {speed}</p>
+				<p>Exp: {exp}</p>
+				{!isEnemey ? (
+					<LevelBar exp={exp} maxExp={level * 10} levelUps={levelUps} />
+				) : null }
+			</div>
 
-			{!isEnemey ? (
-				<LevelBar exp={exp} maxExp={level * 10} levelUps={levelUps} />
-			) : (
-				<p>Exp {exp}</p>
-			)}
 
-			{!isDead ? (isEnemey ? (<button type="button" onClick={attack}>Attack</button>) : null) : 'Dead' }
+			{!isDead ? (
+				isEnemey ? (
+					<button type="button" onClick={attack}>Attack</button>
+				) : null
+			) : 'Dead' }
 
 			{/* ITEMS */}
 			{!isEnemey ? (
-				<>
-					<br />
+				<div className="player-items">
 					<p>Potions:</p>
 					<Items />
 					<br />
 					<p>Items:</p>
 					<p>...</p>
-				</>
+				</div>
 			) : null}
 
 		</div>

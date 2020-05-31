@@ -193,8 +193,7 @@ const rootReducer = (state = initialState, action) => {
 		let newPlayerHealth = player.health - enemy.strength;
 		let newPlayerMana = player.mana - 1;
 		if (Math.random() < (player.agility / 100)) {
-		newPlayerHealth = player.health
-
+			newPlayerHealth = player.health;
 		}
 
 		if (newPlayerMana < 0) {
