@@ -7,7 +7,7 @@
 
 .character {
 	flex: 0 0 auto;
-	width: 200px;
+	width: 260px;
 	// height: 200px;
 	border: 1px solid green;
 	background-color: #ffffff;
@@ -22,7 +22,7 @@
 	// border: 1px solid red;
 	display: grid;
 	grid-template-columns: 60px auto;
-	grid-template-rows: 19px 19px 19px;
+	grid-template-rows: auto 19px 19px;
 	grid-template-areas:
 		"icon name"
 		"icon health"
