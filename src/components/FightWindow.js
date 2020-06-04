@@ -75,7 +75,6 @@ class ConnectedFightWindow extends Component {
 						<button onClick={this.levelUpStrength} type="button">Strength ({player.strength})</button>
 						<button onClick={this.levelUpagility} type="button">agility ({player.agility})</button>
 						<button onClick={this.levelUpintelligence} type="button">intelligence ({player.intelligence})</button>
-
 					</div>
 				) : null }
 

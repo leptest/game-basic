@@ -9,11 +9,15 @@
 	flex: 0 0 auto;
 	width: 260px;
 	// height: 200px;
-	border: 1px solid green;
+	border: 5px solid transparent;
 	background-color: #ffffff;
 	opacity: 0.9;
 	margin: 20px;
 	padding: 10px;
+
+	&.is-targeted {
+		border-color: orange;
+	}
 }
 
 .name-plate {

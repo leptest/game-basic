@@ -6,12 +6,15 @@ import Mob from '../classes/mob';
 
 import {
 	ADD_ARTICLE,
+	TARGET_PLAYER,
 	ATTACK_ENEMY,
+	CAST_SPELL,
 	LEVEL_UP,
 	NEW_BATTLE,
 	USE_POTION,
 } from '../constants/action-types';
 import MONSTER_TYPES from '../constants/monster-types';
+import SPELL_TYPES from '../constants/spell-types';
 import { randomIntegerInRange } from '../utils/utils';
 
 // const test = ;
@@ -22,7 +25,7 @@ const initialState = {
 		title: 'my title',
 	}],
 	player: {
-		id: 1,
+		id: 99,
 		icon: '/images/players/player.svg',
 		name: 'Daniel',
 		level: 1,
@@ -38,9 +41,11 @@ const initialState = {
 		isDead: false,
 		slots: [],
 		critChance: 0.2,
+		spells: SPELL_TYPES,
 	},
 	enemies: [],
 	levelUps: 0,
+	targetedPlayer: null,
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -53,6 +58,14 @@ const rootReducer = (state = initialState, action) => {
 				...cloneDeep(state.articles),
 				action.payload,
 			],
+		};
+	}
+
+	case TARGET_PLAYER: {
+		console.log('TARGET_PLAYER', action.payload);
+		return {
+			...cloneDeep(state),
+			targetedPlayer: action.payload.id,
 		};
 	}
 
@@ -137,10 +150,125 @@ const rootReducer = (state = initialState, action) => {
 		};
 	}
 
-	case ATTACK_ENEMY: {
-		console.log('ATTACK_ENEMY');
+	case CAST_SPELL: {
+		const { id, spell } = action.payload;
+		console.log('CAST_SPELL', spell.name, spell.damageType);
 
-		const enemy = state.enemies.filter((e) => e.id === action.payload)[0];
+		const enemy = state.enemies.filter((e) => e.id === state.targetedPlayer)[0];
+		const { player } = state;
+
+		// Check mana cost
+		// Check spell type (damage, heal, buff, etc)
+		// Check for valid target based on type
+		// If damage, do damage calc, apply damage, check for death and levelup.
+		// If heal, do heal calc, and apply.
+		// If spell cast successfully, reduce mana.
+
+
+		// < spell.cost
+		if (player.mana < spell.manaCost) {
+			return {
+				...cloneDeep(state),
+			};
+		}
+		let damageModifier = 1;
+
+		switch (spell.damageType) {
+		case 'magic':
+			// console.log('magic');
+			break;
+		case 'physical':
+			// console.log('physical');
+			break;
+		case 'heal':
+			// console.log('heal');
+			break;
+		default:
+			// console.log('default');
+		}
+
+
+		if (Math.random() < player.critChance) {
+			damageModifier = 2;
+			console.log('Crit!');
+		}
+
+		let { isDead } = enemy;
+		const damage = spell.damage * damageModifier;
+
+		let newHealth = enemy.health - damage;
+		let newExp = player.exp;
+		let newLevel = player.level;
+		let { levelUps } = state;
+
+
+		console.log(`${player.name} deals ${damage} damage to ${enemy.name}.`);
+
+		if (newHealth <= 0) {
+			console.log('Killed the monster!');
+
+			isDead = true;
+			newHealth = 0;
+			newExp += enemy.exp;
+			console.log('newExp', newExp);
+
+			if (newExp >= player.level * 10) {
+				levelUps += 1;
+				console.log('levelUps', levelUps);
+				newExp -= player.level * 10;
+				newLevel = player.level + 1;
+			}
+		}
+
+
+		enemy.health = newHealth;
+		enemy.isDead = isDead;
+		enemy.mana -= 1;
+
+		// TODO: calc damange from mob -> player
+		let newPlayerIsDead = false;
+		let newPlayerHealth = player.health - enemy.strength;
+		let newPlayerMana = player.mana - spell.manaCost;
+		if (Math.random() < (player.agility / 100)) {
+			newPlayerHealth = player.health;
+		}
+
+		if (newPlayerMana < 0) {
+			newPlayerMana = 0;
+		}
+
+		if (newPlayerHealth <= 0) {
+			newPlayerIsDead = true;
+			newPlayerHealth = 0;
+		}
+
+		// const newEnemies = [...cloneDeep(state.enemies)];
+		// newEnemies.push({
+		// 	...cloneDeep(attackedEnemy),
+		// 	health: newHealth,
+		// 	isDead,
+		// });
+
+
+		return {
+			...cloneDeep(state),
+			// enemies: newEnemies,
+			player: {
+				...cloneDeep(player),
+				level: newLevel,
+				exp: newExp,
+				health: newPlayerHealth,
+				isDead: newPlayerIsDead,
+				mana: newPlayerMana,
+			},
+			levelUps,
+		};
+	}
+
+	case ATTACK_ENEMY: {
+		console.log('ATTACK_ENEMY', action.payload.spell);
+
+		const enemy = state.enemies.filter((e) => e.id === action.payload.id)[0];
 		const { player } = state;
 
 		// < spell.cost

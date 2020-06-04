@@ -1,6 +1,8 @@
 import {
 	ADD_ARTICLE,
+	TARGET_PLAYER,
 	ATTACK_ENEMY,
+	CAST_SPELL,
 	LEVEL_UP,
 	NEW_BATTLE,
 	USE_POTION,
@@ -10,8 +12,16 @@ export function addArticle(payload) {
 	return { type: ADD_ARTICLE, payload };
 }
 
+export function targetPlayer(payload) {
+	return { type: TARGET_PLAYER, payload };
+}
+
 export function attackEnemy(payload) {
 	return { type: ATTACK_ENEMY, payload };
+}
+
+export function castSpell(payload) {
+	return { type: CAST_SPELL, payload };
 }
 
 export function levelUp(payload) {

@@ -5,6 +5,7 @@ import HealthBar from './HealthBar';
 import ManaBar from './ManaBar';
 // import SpeedBar from './SpeedBar';
 import LevelBar from './LevelBar';
+import SpellBar from './SpellBar';
 import Items from './Items';
 
 import './Player.scss';
@@ -12,7 +13,7 @@ import './Player.scss';
 const ConnectedPlayer = (props) => {
 	// console.log(props);
 	const {
-		player, attackEnemy, isEnemey, levelUps,
+		player, attackEnemy, isEnemey, levelUps, targetPlayer, targetedPlayer,
 	} = props;
 
 	if (!player) return false;
@@ -32,14 +33,21 @@ const ConnectedPlayer = (props) => {
 		isDead,
 		exp,
 		icon,
+		spells,
 	} = player;
 
 	const attack = () => {
-		attackEnemy(id);
+		attackEnemy({ id });
 	};
 
+	let charClass = 'character';
+
+	if (targetedPlayer === id) {
+		charClass += ' is-targeted';
+	}
+
 	return (
-		<div className="character">
+		<div className={charClass} onClick={() => { if (isEnemey) { targetPlayer({ id }); } }}>
 			<div className="name-plate">
 				<img className="character__icon" src={icon} alt="" />
 				<HealthBar health={health} maxHealth={maxHealth} />
@@ -69,6 +77,9 @@ const ConnectedPlayer = (props) => {
 			{/* ITEMS */}
 			{!isEnemey ? (
 				<div className="player-items">
+					{spells && spells.length ? (
+						<SpellBar spells={spells} />
+					) : null}
 					<p>Potions:</p>
 					<Items />
 					<br />
@@ -85,11 +96,11 @@ const mapDispatchToProps = {
 	...allActions,
 };
 
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
 	// player: state.player,
 	// enemy: state.enemy,
-	// enemy2: state.enemy2,
 	// levelUps: state.levelUps,
+	targetedPlayer: state.rootReducer.targetedPlayer,
 });
 
 const Player = connect(
