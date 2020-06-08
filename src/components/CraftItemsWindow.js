@@ -10,7 +10,6 @@ import './CraftItemsWindow.scss';
 
 
 const itemTypes = ['Armour', 'Trinket', 'Weapon'];
-
 const rarityNames = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary'];
 const rarityChances = [1, 0.4, 0.2, 0.05, 0.01];
 // const rarityChances = [1, 0.3, 0.1, 0.05, 0.005];
