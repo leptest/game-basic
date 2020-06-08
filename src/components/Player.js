@@ -54,25 +54,24 @@ const ConnectedPlayer = (props) => {
 				<ManaBar mana={mana} maxMana={maxMana} />
 				<p className="character__name"><strong>{name} - Lvl {level}</strong></p>
 			</div>
-
+			{!isEnemey ? (
+				<LevelBar exp={exp} maxExp={level * 10} levelUps={levelUps} />
+			) : null }
+			<br />
 			{/* <SpeedBar speed={speed} maxSpeed={2000} /> */}
 			<div className="player-stats">
 				<p>Str: {strength}</p>
 				<p>Agi: {agility}</p>
 				<p>Int: {intelligence}</p>
-				<p>Spd: {speed}</p>
+				{/* <p>Spd: {speed}</p> */}
 				<p>Exp: {exp}</p>
-				{!isEnemey ? (
-					<LevelBar exp={exp} maxExp={level * 10} levelUps={levelUps} />
-				) : null }
 			</div>
 
-
-			{!isDead ? (
+			{/* {!isDead ? (
 				isEnemey ? (
 					<button type="button" onClick={attack}>Attack</button>
 				) : null
-			) : 'Dead' }
+			) : 'Dead' } */}
 
 			{/* ITEMS */}
 			{!isEnemey ? (

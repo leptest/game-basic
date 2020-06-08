@@ -15,6 +15,7 @@ import {
 } from '../constants/action-types';
 import MONSTER_TYPES from '../constants/monster-types';
 import SPELL_TYPES from '../constants/spell-types';
+import EXP_LEVELS from '../constants/exp-levels';
 import { randomIntegerInRange } from '../utils/utils';
 
 // const test = ;
@@ -29,7 +30,7 @@ const initialState = {
 		icon: '/images/players/player.svg',
 		name: 'Daniel',
 		level: 1,
-		exp: 0,
+		exp: 1,
 		health: 20,
 		maxHealth: 20,
 		mana: 5,
@@ -199,7 +200,8 @@ const rootReducer = (state = initialState, action) => {
 		const damage = spell.damage * damageModifier;
 
 		let newHealth = enemy.health - damage;
-		let newExp = player.exp;
+		const currentPlayerExp = player.exp;
+		let newExp;
 		let newLevel = player.level;
 		let { levelUps } = state;
 
@@ -211,17 +213,26 @@ const rootReducer = (state = initialState, action) => {
 
 			isDead = true;
 			newHealth = 0;
-			newExp += enemy.exp;
-			console.log('1 newExp', newExp);
-			console.log('2 player.level', player.level);
+			newExp = currentPlayerExp + enemy.exp;
 
+			let newBracket = 0;
+			let nextBracket = 0;
 
-			if (newExp >= player.level * 10) {
-				levelUps += 1;
-				console.log('levelUps', levelUps);
-				newExp -= player.level * 10;
-				newLevel = player.level + 1;
-			}
+			EXP_LEVELS.forEach((expLevel, index) => {
+				if (newExp > expLevel) {
+					newLevel = index + 1;
+					newBracket = EXP_LEVELS[index];
+					nextBracket = EXP_LEVELS[index + 1];
+				}
+			});
+
+			levelUps = newLevel - player.level + levelUps;
+
+			console.log('currentLevel', player.level);
+			console.log('newLevel', newLevel);
+			console.log('newBracket', newBracket);
+			console.log('nextBracket', nextBracket);
+			console.log('levelUps', levelUps);
 		}
 
 
