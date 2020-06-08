@@ -212,7 +212,9 @@ const rootReducer = (state = initialState, action) => {
 			isDead = true;
 			newHealth = 0;
 			newExp += enemy.exp;
-			console.log('newExp', newExp);
+			console.log('1 newExp', newExp);
+			console.log('2 player.level', player.level);
+
 
 			if (newExp >= player.level * 10) {
 				levelUps += 1;
