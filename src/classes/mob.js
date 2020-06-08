@@ -8,7 +8,7 @@ const Mob = (id, type, level) => {
 
 	return {
 		id,
-		icon: `/images/monsters/${type}.svg`,
+		icon: `/images/monsters/${type}.gif`,
 		name: type,
 		level,
 		exp: Math.ceil(mobType.base.exp * mobType.scalers.exp * level * newVariance),
