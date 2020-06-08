@@ -71,7 +71,7 @@ class ConnectedFightWindow extends Component {
 				{levelUps ? (
 					<div className="level-ups">
 						<p>You have {levelUps} new levels to spend!</p>
-						<button className="button" onClick={this.levelUpHealth} type="button">Health ({player.health})</button>
+						<button onClick={this.levelUpHealth} type="button">Health ({player.health})</button>
 						<button onClick={this.levelUpStrength} type="button">Strength ({player.strength})</button>
 						<button onClick={this.levelUpagility} type="button">agility ({player.agility})</button>
 						<button onClick={this.levelUpintelligence} type="button">intelligence ({player.intelligence})</button>
