@@ -201,7 +201,7 @@ const rootReducer = (state = initialState, action) => {
 
 		let newHealth = enemy.health - damage;
 		const currentPlayerExp = player.exp;
-		let newExp;
+		let newExp = player.exp;
 		let newLevel = player.level;
 		let { levelUps } = state;
 
