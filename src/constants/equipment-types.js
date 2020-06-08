@@ -1,144 +1,158 @@
 const EQUIPMENT_TYPES = {
 	weapons: [
 		{
-			id: 1001,
+			id: 1.1.1,
 			name: 'Bone Sword',
+			//zone: 'Graveyard',
 			attack: 2,
+			//durability: 10,
 		},
-		// {
-		// 	id: 1002,
-		// 	name: '',
-		// 	attack: 0,
-		// },
-		// {
-		// 	id: 1003,
-		// 	name: '',
-		// 	attack: 0,
-		// },
 		{
-			id: 1004,
+			id: 1.1.2,
+			name: 'Steel Sword',
+			//zone: 'Valhalla',
+			attack: 6,
+			//durability: 60,
+		},
+		{
+			id: 1.1.3,
+			name: 'Magma Sword',
+			//zone: 'Volcano',
+			attack: 28,
+			//special: 'increase firedamage',
+			//durability: '100',
+		},
+		{
+			id: 1.1.8,
+			name: 'Magic Sword',
+			//zone: 'Rainbow',
+			attack: 50,
+			//special: 'infinite mana' '100% block/parry' 'unblockable',
+		},
+		{
+			id: 1.2.1,
 			name: 'Dragon Hammer',
 			attack: 5,
 		},
-		// {
-		// 	id: 1005,
-		// 	name: '',
-		// 	attack: 0,
-		// },
-		// {
-		// 	id: 1006,
-		// 	name: '',
-		// 	attack: 0,
-		// },
 		{
-			id: 1007,
+			id: ,
+			name: '',
+			attack: ,
+		},
+		{
+			id: ,
+			name: '',
+			attack: ,
+		},
+		{
+			id: 1.3.1,
 			name: 'Royal Axe',
 			attack: 9,
 		},
-		// {
-		// 	id: 1008,
-		// 	name: '',
-		// 	attack: 0,
-		// },
-		// {
-		// 	id: 1009,
-		// 	name: '',
-		// 	attack: 0,
-		// },
+		{
+			id: ,
+			name: '',
+			attack: ,
+		},
+		{
+			id: ,
+			name: '',
+			attack: ,
+		},
 	],
 	armour: [
 		{
-			id: 2001,
+			id: 2.1.1,
 			name: 'Helmet',
-			attack: 0,
+			attack: ,
 		},
-		// {
-		// 	id: 2002,
-		// 	name: '',
-		// 	attack: 0,
-		// },
-		// {
-		// 	id: 2003,
-		// 	name: '',
-		// 	attack: 0,
-		// },
 		{
-			id: 2004,
+			id: 2.1.2,
+			name: '',
+			attack: ,
+		},
+		{
+			id: 2.1.3,
+			name: '',
+			attack: ,
+		},
+		{
+			id: 2.1.8,
 			name: 'Magic Helmet',
-			attack: 0,
+			attack: ,
 		},
 		{
-			id: 2005,
+			id: 2.2.1,
 			name: 'Boots',
-			attack: 0,
+			attack: ,
 		},
-		// {
-		// 	id: 2006,
-		// 	name: '',
-		// 	attack: 0,
-		// },
-		// {
-		// 	id: 2007,
-		// 	name: '',
-		// 	attack: 0,
-		// },
 		{
-			id: 2008,
+			id: 2.2.2,
+			name: '',
+			attack: ,
+		},
+		{
+			id: 2.2.3,
+			name: '',
+			attack: ,
+		},
+		{
+			id: 2.2.8,
 			name: 'Magic Boots',
-			attack: 0,
+			attack: ,
 		},
 		{
-			id: 2009,
+			id: 2.3.1,
 			name: 'Legs',
-			attack: 0,
+			attack: ,
 		},
-		// {
-		// 	id: 2010,
-		// 	name: '',
-		// 	attack: 0,
-		// },
-		// {
-		// 	id: 2011,
-		// 	name: '',
-		// 	attack: 0,
-		// },
 		{
-			id: 2012,
+			id: 2.3.2,
+			name: '',
+			attack: ,
+		},
+		{
+			id: 2.3.3,
+			name: '',
+			attack: ,
+		},
+		{
+			id: 2.3.8,
 			name: 'Magic Legs',
-			attack: 0,
+			attack: ,
 		},
 		{
-			id: 2013,
+			id: 2.4.1,
 			name: 'Plate Armour',
 			armour: 9,
 		},
 		{
-			id: 2014,
+			id: 2.4.2,
 			name: 'Gold Armour',
 			armour: 14,
 		},
-		// {
-		// 	id: 2015,
-		// 	name: '',
-		// 	attack: 0,
-		// },
 		{
-			id: 2016,
+			id: 2.4.3,
+			name: '',
+			attack: ,
+		},
+		{
+			id: 2.4.8,
 			name: 'Magic Plate Armour',
 			armour: 17,
 		},
 	],
 	trinkets: [
 		{
-			id: 3001,
+			id: 3.7.1,
 			name: 'Glacier Amulet',
 		},
 		{
-			id: 3002,
+			id: 3.8.1,
 			name: 'Garlic Necklace',
 		},
 		{
-			id: 3003,
+			id: 3.7.2,
 			name: 'Platinum Amulet',
 		},
 	],
@@ -146,11 +160,11 @@ const EQUIPMENT_TYPES = {
 
 
 export default EQUIPMENT_TYPES;
-/* {
+/*{
 	id: ,
 	name: '',
-	attack: 0,
-}, */
+	attack: ,
+},*/
 
 // Carlin Sword
 // Dagger
