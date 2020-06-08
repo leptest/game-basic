@@ -66,7 +66,7 @@ const MONSTER_TYPES = [
 		},
 	},
 	{
-		name: 'Skeleton',
+		name: 'Ghost',
 		base: {
 			exp: 4,
 			health: 20,
@@ -88,7 +88,7 @@ const MONSTER_TYPES = [
 		},
 	},
 	{
-		name: 'Rot Worm',
+		name: 'Bat',
 		base: {
 			exp: 3,
 			health: 10,
@@ -110,7 +110,7 @@ const MONSTER_TYPES = [
 		},
 	},
 	{
-		name: 'Bat',
+		name: 'rat',
 		base: {
 			exp: 2,
 			health: 5,
