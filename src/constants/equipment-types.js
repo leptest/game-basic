@@ -1,144 +1,144 @@
 const EQUIPMENT_TYPES = {
 	weapons: [
 		{
-			id: 1.1.1,
+			id: 1001,
 			name: 'Bone Sword',
 			attack: 2,
 		},
+		// {
+		// 	id: 1002,
+		// 	name: '',
+		// 	attack: 0,
+		// },
+		// {
+		// 	id: 1003,
+		// 	name: '',
+		// 	attack: 0,
+		// },
 		{
-			id: ,
-			name: '',
-			attack: ,
-		},
-		{
-			id: ,
-			name: '',
-			attack: ,
-		},
-		{
-			id: 1.2.1,
+			id: 1004,
 			name: 'Dragon Hammer',
 			attack: 5,
 		},
+		// {
+		// 	id: 1005,
+		// 	name: '',
+		// 	attack: 0,
+		// },
+		// {
+		// 	id: 1006,
+		// 	name: '',
+		// 	attack: 0,
+		// },
 		{
-			id: ,
-			name: '',
-			attack: ,
-		},
-		{
-			id: ,
-			name: '',
-			attack: ,
-		},
-		{
-			id: 1.3.1,
+			id: 1007,
 			name: 'Royal Axe',
 			attack: 9,
 		},
-		{
-			id: ,
-			name: '',
-			attack: ,
-		},
-		{
-			id: ,
-			name: '',
-			attack: ,
-		},
+		// {
+		// 	id: 1008,
+		// 	name: '',
+		// 	attack: 0,
+		// },
+		// {
+		// 	id: 1009,
+		// 	name: '',
+		// 	attack: 0,
+		// },
 	],
 	armour: [
 		{
-			id: 2.1.1,
+			id: 2001,
 			name: 'Helmet',
-			attack: ,
+			attack: 0,
 		},
+		// {
+		// 	id: 2002,
+		// 	name: '',
+		// 	attack: 0,
+		// },
+		// {
+		// 	id: 2003,
+		// 	name: '',
+		// 	attack: 0,
+		// },
 		{
-			id: 2.1.2,
-			name: '',
-			attack: ,
-		},
-		{
-			id: 2.1.3,
-			name: '',
-			attack: ,
-		},
-		{
-			id: 2.1.8,
+			id: 2004,
 			name: 'Magic Helmet',
-			attack: ,
+			attack: 0,
 		},
 		{
-			id: 2.2.1,
+			id: 2005,
 			name: 'Boots',
-			attack: ,
+			attack: 0,
 		},
+		// {
+		// 	id: 2006,
+		// 	name: '',
+		// 	attack: 0,
+		// },
+		// {
+		// 	id: 2007,
+		// 	name: '',
+		// 	attack: 0,
+		// },
 		{
-			id: 2.2.2,
-			name: '',
-			attack: ,
-		},
-		{
-			id: 2.2.3,
-			name: '',
-			attack: ,
-		},
-		{
-			id: 2.2.8,
+			id: 2008,
 			name: 'Magic Boots',
-			attack: ,
+			attack: 0,
 		},
 		{
-			id: 2.3.1,
+			id: 2009,
 			name: 'Legs',
-			attack: ,
+			attack: 0,
 		},
+		// {
+		// 	id: 2010,
+		// 	name: '',
+		// 	attack: 0,
+		// },
+		// {
+		// 	id: 2011,
+		// 	name: '',
+		// 	attack: 0,
+		// },
 		{
-			id: 2.3.2,
-			name: '',
-			attack: ,
-		},
-		{
-			id: 2.3.3,
-			name: '',
-			attack: ,
-		},
-		{
-			id: 2.3.8,
+			id: 2012,
 			name: 'Magic Legs',
-			attack: ,
+			attack: 0,
 		},
 		{
-			id: 2.4.1,
+			id: 2013,
 			name: 'Plate Armour',
 			armour: 9,
 		},
 		{
-			id: 2.4.2,
+			id: 2014,
 			name: 'Gold Armour',
 			armour: 14,
 		},
+		// {
+		// 	id: 2015,
+		// 	name: '',
+		// 	attack: 0,
+		// },
 		{
-			id: 2.4.3,
-			name: '',
-			attack: ,
-		},
-		{
-			id: 2.4.8,
+			id: 2016,
 			name: 'Magic Plate Armour',
 			armour: 17,
 		},
 	],
 	trinkets: [
 		{
-			id: 3.7.1,
+			id: 3001,
 			name: 'Glacier Amulet',
 		},
 		{
-			id: 3.8.1,
+			id: 3002,
 			name: 'Garlic Necklace',
 		},
 		{
-			id: 3.7.2,
+			id: 3003,
 			name: 'Platinum Amulet',
 		},
 	],
@@ -146,11 +146,11 @@ const EQUIPMENT_TYPES = {
 
 
 export default EQUIPMENT_TYPES;
-/*{
+/* {
 	id: ,
 	name: '',
-	attack: ,
-},*/
+	attack: 0,
+}, */
 
 // Carlin Sword
 // Dagger
