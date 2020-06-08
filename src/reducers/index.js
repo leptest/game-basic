@@ -130,9 +130,10 @@ const rootReducer = (state = initialState, action) => {
 		const newStats = {};
 
 		if (action.payload.health) {
-			newStats.health = state.player.health + action.payload.health;
+			newStats.maxHealth = state.player.maxHealth + action.payload.health;
 		} else if (action.payload.strength) {
 			newStats.strength = state.player.strength + action.payload.strength;
+			newStats.maxHealth = newStats.strength * 12;
 		} else if (action.payload.agility) {
 			newStats.agility = state.player.agility + action.payload.agility;
 		} else if (action.payload.intelligence) {
