@@ -13,7 +13,7 @@ import './Player.scss';
 const ConnectedPlayer = (props) => {
 	// console.log(props);
 	const {
-		player, attackEnemy, isEnemey, levelUps, targetPlayer, targetedPlayer,
+		player, attackEnemy, isEnemey, levelUps, nextBracket, targetPlayer, targetedPlayer,
 	} = props;
 
 	if (!player) return false;
@@ -55,7 +55,7 @@ const ConnectedPlayer = (props) => {
 				<p className="character__name"><strong>{name} - Lvl {level}</strong></p>
 			</div>
 			{!isEnemey ? (
-				<LevelBar exp={exp} maxExp={level * 10} levelUps={levelUps} />
+				<LevelBar exp={exp} maxExp={nextBracket} levelUps={levelUps} />
 			) : null }
 			<br />
 			{/* <SpeedBar speed={speed} maxSpeed={2000} /> */}

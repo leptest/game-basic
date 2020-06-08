@@ -49,7 +49,10 @@ class ConnectedFightWindow extends Component {
 			enemies,
 			levelUps,
 			newBattle,
+			nextBracket,
 		} = this.props;
+
+		console.log('nextBracket', nextBracket);
 
 		return (
 			<div className="fight-window">
@@ -59,7 +62,7 @@ class ConnectedFightWindow extends Component {
 				</header>
 
 				<div className="characters characters--player">
-					<Player player={player} levelUps={levelUps} />
+					<Player player={player} levelUps={levelUps} nextBracket={nextBracket} />
 				</div>
 
 				<div className="characters characters--enemies">
@@ -102,6 +105,7 @@ const mapStateToProps = (state) => ({
 	player: state.rootReducer.player,
 	enemies: state.rootReducer.enemies,
 	levelUps: state.rootReducer.levelUps,
+	nextBracket: state.rootReducer.nextBracket,
 });
 
 const FightWindow = connect(

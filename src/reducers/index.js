@@ -46,6 +46,7 @@ const initialState = {
 	},
 	enemies: [],
 	levelUps: 0,
+	nextBracket: 10,
 	targetedPlayer: null,
 };
 
@@ -207,6 +208,13 @@ const rootReducer = (state = initialState, action) => {
 
 
 		console.log(`${player.name} deals ${damage} damage to ${enemy.name}.`);
+		let nextBracket = 0;
+
+		EXP_LEVELS.forEach((expLevel, index) => {
+			if (newExp > expLevel) {
+				nextBracket = EXP_LEVELS[index + 1];
+			}
+		});
 
 		if (newHealth <= 0) {
 			console.log('Killed the monster!');
@@ -216,7 +224,6 @@ const rootReducer = (state = initialState, action) => {
 			newExp = currentPlayerExp + enemy.exp;
 
 			let newBracket = 0;
-			let nextBracket = 0;
 
 			EXP_LEVELS.forEach((expLevel, index) => {
 				if (newExp > expLevel) {
@@ -228,11 +235,11 @@ const rootReducer = (state = initialState, action) => {
 
 			levelUps = newLevel - player.level + levelUps;
 
-			console.log('currentLevel', player.level);
-			console.log('newLevel', newLevel);
-			console.log('newBracket', newBracket);
-			console.log('nextBracket', nextBracket);
-			console.log('levelUps', levelUps);
+			// console.log('currentLevel', player.level);
+			// console.log('newLevel', newLevel);
+			// console.log('newBracket', newBracket);
+			// console.log('nextBracket', nextBracket);
+			// console.log('levelUps', levelUps);
 		}
 
 
@@ -277,6 +284,7 @@ const rootReducer = (state = initialState, action) => {
 				mana: newPlayerMana,
 			},
 			levelUps,
+			nextBracket,
 		};
 	}
 
