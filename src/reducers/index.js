@@ -138,6 +138,7 @@ const rootReducer = (state = initialState, action) => {
 			newStats.agility = state.player.agility + action.payload.agility;
 		} else if (action.payload.intelligence) {
 			newStats.intelligence = state.player.intelligence + action.payload.intelligence;
+			newStats.maxMana = newStats.intelligence * 14;
 		}
 		console.log(newStats);
 
