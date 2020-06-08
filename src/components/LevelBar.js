@@ -3,7 +3,10 @@ import React from 'react';
 import './LevelBar.scss';
 
 const LevelBar = ({ exp, maxExp, levelUps }) => {
-	const width = (exp / maxExp) * 100;
+	let width = (exp / maxExp) * 100;
+	if (width > 100) {
+		width = 100;
+	}
 
 	const styles = {
 		width: `${width}%`,
