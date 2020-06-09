@@ -55,6 +55,38 @@ class ConnectedCraftItemsWindow extends Component {
 		console.log('Rarity: ', rarityNames[rarity]);
 		console.log('iLvl: ', ilvl);
 
+
+		// ROLL MODIFIERS
+		const numModifiers = rarity;
+		const modifiers = ['5% cold', 'suffix', '12345',];
+
+		for (let i = 0; i < numModifiers; i++) {
+			// Pick random mod value at this point?
+			modifiers.push(EQUIPMENT_MODIFIERS[randomIntegerInRange(0, EQUIPMENT_MODIFIERS.length)]);
+		}
+	/*	// get base item;
+
+		let baseItems;
+
+		if (itemType === 0) {
+			console.log('Base Type: armour');
+			baseItems = EQUIPMENT_TYPES.armour;
+		} else if (itemType === 1) {
+			console.log('Base Type: trinket');
+			baseItems = EQUIPMENT_TYPES.trinkets;
+		} else if (itemType === 2) {
+			console.log('Base Type: weapon');
+			baseItems = EQUIPMENT_TYPES.weapons;
+		}
+
+		const baseItem = baseItems[randomIntegerInRange(0, baseItems.length - 1)];
+
+		console.log('Base Item: ', baseItem);*/
+
+
+		console.log('Modifiers: ', modifiers);
+
+
 		// get base item;
 
 		let baseItems;
@@ -75,16 +107,17 @@ class ConnectedCraftItemsWindow extends Component {
 		console.log('Base Item: ', baseItem);
 
 
-		// ROLL MODIFIERS
+		/*// ROLL MODIFIERS
 		const numModifiers = rarity;
-		const modifiers = [];
+		const modifiers = ['prefix', 'suffix'];
 
 		for (let i = 0; i < numModifiers; i++) {
 			// Pick random mod value at this point?
 			modifiers.push(EQUIPMENT_MODIFIERS[randomIntegerInRange(0, EQUIPMENT_MODIFIERS.length)]);
 		}
 
-		console.log('Modifiers: ', modifiers);
+
+		console.log('Modifiers: ', modifiers);*/
 
 
 		const newItem = {
@@ -158,7 +191,21 @@ class ConnectedCraftItemsWindow extends Component {
 							{savedItem.attack ? (
 								<p>Attack: {savedItem.attack}</p>
 							) : null}
-
+							{savedItem.strength ? (
+								<p>Strength: {savedItem.strength}</p>
+							) : null}
+							{savedItem.agility ? (
+								<p>Agility: {savedItem.agility}</p>
+							) : null}
+							{savedItem.intelligence ? (
+								<p>Intelligence: {savedItem.intelligence}</p>
+							) : null}
+              {savedItem.modifiers ? (
+								<p>prefix: {savedItem.modifiers}</p>
+							) : null}
+							{savedItem.modifiers ? (
+								<p>suffix: {savedItem.modifiers}</p>
+							) : null}
 
 							{/* <p>{rarityNames[savedItem.rarity]}</p> */}
 						</div>

@@ -1,8 +1,38 @@
 // int = ilvl * levelScaler * scaler * rand(rangeUpper, rangeLower)
 // when random modifier is rolled, save ID and rand(rangeUpper, rangeLower) value
 
-const EQUIPMENT_MODIFIERS = [
-	{
+const EQUIPMENT_MODIFIERS = {
+															prefix:[
+																			{
+																			id: 1001,
+																			prename: 'frosted',
+																			type: 'zone-cold',
+																			modifier: 'increase',
+																			unit: 'percentage',
+																			scaler: 1,
+																			rangeLower: 1,
+																			rangeUpper: 100,
+																			},
+																		],
+															suffix:[
+																			{
+																				id: 2001,
+																				name : 'inuit',
+																				type: 'mob-cold',
+																				modifier: 'increase',
+																				unit: 'percentage',
+																				scaler: 1,
+																				rangeLower: 1,
+																				rangeUpper: 100,
+																			},
+																		]
+																	}
+
+
+
+
+
+/*	{
 		id: 1,
 		type: 'resistance-fire',
 		modifier: 'increase',
@@ -71,7 +101,7 @@ const EQUIPMENT_MODIFIERS = [
 		scaler: 1,
 		rangeLower: 1,
 		rangeUpper: 100,
-	},
-];
+	},*/
+
 
 export default EQUIPMENT_MODIFIERS;
