@@ -4,11 +4,13 @@ import * as allActions from '../actions/index';
 
 import { randomIntegerInRange } from '../utils/utils';
 import EQUIPMENT_TYPES from '../constants/equipment-types';
-import EQUIPMENT_MODIFIERS from '../constants/equipment-modifiers';
+import EQUIPMENT_MODIFIERS_PREFIX from '../constants/equipment-modifiers-prefix';
+import EQUIPMENT_MODIFIERS_SUFFIX from '../constants/equipment-modifiers-suffix';
 
 import './CraftItemsWindow.scss';
 
-
+//const prefixTypes = ['cold', 'fire'];
+//const suffixTypes = ['cold', 'fire'];
 const itemTypes = ['Armour', 'Trinket', 'Weapon'];
 const rarityNames = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary'];
 const rarityChances = [1, 0.4, 0.2, 0.05, 0.01];
@@ -58,33 +60,46 @@ class ConnectedCraftItemsWindow extends Component {
 
 		// ROLL MODIFIERS
 		const numModifiers = rarity;
-		const modifiers = ['5% cold', 'suffix', '12345',];
+		const prefixType = randomIntegerInRange(0, 1);
+		const suffixType = randomIntegerInRange(0, 1);
+
 
 		for (let i = 0; i < numModifiers; i++) {
 			// Pick random mod value at this point?
-			modifiers.push(EQUIPMENT_MODIFIERS[randomIntegerInRange(0, EQUIPMENT_MODIFIERS.length)]);
-		}
-	/*	// get base item;
-
-		let baseItems;
-
-		if (itemType === 0) {
-			console.log('Base Type: armour');
-			baseItems = EQUIPMENT_TYPES.armour;
-		} else if (itemType === 1) {
-			console.log('Base Type: trinket');
-			baseItems = EQUIPMENT_TYPES.trinkets;
-		} else if (itemType === 2) {
-			console.log('Base Type: weapon');
-			baseItems = EQUIPMENT_TYPES.weapons;
+		//	modifiers.push(EQUIPMENT_MODIFIERS[randomIntegerInRange(0, EQUIPMENT_MODIFIERS.length)]);
 		}
 
-		const baseItem = baseItems[randomIntegerInRange(0, baseItems.length - 1)];
+		let prefixes;
 
-		console.log('Base Item: ', baseItem);*/
+		if (prefixType === 0) {
+			console.log('Prefix Type: cold');
+			prefixes = EQUIPMENT_MODIFIERS_PREFIX.cold;
+		} else if (prefixType === 1) {
+			console.log('Prefix Type: fire');
+			prefixes = EQUIPMENT_MODIFIERS_PREFIX.fire;
+		}
+
+		const prefix = prefixes[randomIntegerInRange(0, prefixes.length - 1)];
 
 
-		console.log('Modifiers: ', modifiers);
+		console.log('Prefix: ', prefix);
+
+
+
+		let suffixes;
+
+		if (suffixType === 0) {
+			console.log('Suffix Type: cold');
+			suffixes = EQUIPMENT_MODIFIERS_SUFFIX.cold;
+		} else if (suffixType === 1) {
+			console.log('Suffix Type: fire');
+			suffixes = EQUIPMENT_MODIFIERS_SUFFIX.fire;
+		}
+
+		const suffix = suffixes[randomIntegerInRange(0, suffixes.length - 1)];
+
+
+		console.log('Suffix: ', suffix);
 
 
 		// get base item;
@@ -126,7 +141,11 @@ class ConnectedCraftItemsWindow extends Component {
 			ilvl,
 			itemType,
 			...baseItem,
-			modifiers,
+			prefixType,
+			...prefix,
+			suffixType,
+			...suffix,
+
 		};
 
 		this.setState((prevState) => ({
@@ -182,7 +201,7 @@ class ConnectedCraftItemsWindow extends Component {
 					{savedItems && savedItems.length ? savedItems.map((savedItem, i) => (
 						<div className={`crafted-item rarity rarity-${savedItem.rarity}`} key={i}>
 							<img className="item-icon" src={`/images/equipment/${savedItem.id}.gif`} alt="" />
-							<p>{savedItem.name}</p>
+							<p> The {savedItem.prefix} {savedItem.equipmentname} of the {savedItem.suffix}</p>
 							<p>{itemTypes[savedItem.itemType]}</p>
 							<p>iLvl: {savedItem.ilvl}</p>
 							{savedItem.armour ? (
@@ -203,9 +222,9 @@ class ConnectedCraftItemsWindow extends Component {
               {savedItem.modifiers ? (
 								<p>prefix: {savedItem.modifiers}</p>
 							) : null}
-							{savedItem.modifiers ? (
-								<p>suffix: {savedItem.modifiers}</p>
-							) : null}
+							{/*savedItem.modifiers ? (
+								//<p>suffix: {savedItem.modifiers}</p>
+							) : null*/}
 
 							{/* <p>{rarityNames[savedItem.rarity]}</p> */}
 						</div>

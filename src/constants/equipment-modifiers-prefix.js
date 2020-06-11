@@ -2,7 +2,7 @@
 // when random modifier is rolled, save ID and rand(rangeUpper, rangeLower) value
 
 const EQUIPMENT_MODIFIERS_PREFIX = {
-	prefix: [
+	cold: [
 																			{
 																		  prefix: 'Frosted',
 																			id: 0,
@@ -53,6 +53,9 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 																			rangeLower: 1,
 																			rangeUpper: 100,
 															     		},
+																		],
+
+			fire: [								
 																			{
 																			prefix: 'Heated',
 																			id: 5,

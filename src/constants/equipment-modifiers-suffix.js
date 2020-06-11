@@ -1,5 +1,5 @@
 const EQUIPMENT_MODIFIERS_SUFFIX = {
-  suffix: [
+  cold: [
 
 																			{
 																				suffix: 'Inuit',
@@ -51,6 +51,9 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
                                         rangeLower: 1,
                                         rangeUpper: 100,
                                       },
+                                    ],
+
+  fire: [
                                       {
                                         suffix: 'Emberling',
                                         id: 105,
@@ -62,7 +65,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
                                         rangeUpper: 100,
                                       },
                                         {
-                                        suffix: 'Fire',
+                                        suffix: 'Flame',
                                         id: 106,
                                         type: 'fire',
                                         //modifier: 'increase',
@@ -101,9 +104,6 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
                                   rangeLower: 1,
                                   rangeUpper: 100,
                                 },
-
-
-
 
 
         ],

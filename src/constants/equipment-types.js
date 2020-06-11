@@ -2,7 +2,7 @@ const EQUIPMENT_TYPES = {
 	weapons: [
 		{
 			id: 1001,
-			name: 'Bone Sword',
+			equipmentname: 'Bone Sword',
 			//zone: 'Graveyard',
 			attack: 2,
 			strength: 5,
@@ -14,7 +14,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 1002,
-			name: 'Steel Sword',
+			equipmentname: 'Steel Sword',
 			//zone: 'Valhalla',
 			attack: 6,
 			strength: 5,
@@ -26,7 +26,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 1003,
-			name: 'Magma Sword',
+			equipmentname: 'Magma Sword',
 			//zone: 'Volcano',
 			attack: 28,
 			strength: 5,
@@ -39,7 +39,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 1888,
-			name: 'Magic Sword',
+			equipmentname: 'Magic Sword',
 			//zone: 'Rainbow',
 			attack: 50,
 			strength: 5,
@@ -52,7 +52,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 2001,
-			name: 'Bone Hammer',
+			equipmentname: 'Bone Hammer',
 			//zone: 'Graveyard',
 			attack: 5,
 			strength: 5,
@@ -62,7 +62,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 2002,
-			name: 'Steel Hammer',
+			equipmentname: 'Steel Hammer',
 			//zone: 'Valhalla',
 			attack: 10,
 			strength: 5,
@@ -72,7 +72,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 2003,
-			name: 'Magma Hammer',
+			equipmentname: 'Magma Hammer',
 			//zone: 'volcano',
 			attack: 36,
 			strength: 5,
@@ -83,7 +83,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 2888,
-			name: 'Magic Hammer',
+			equipmentname: 'Magic Hammer',
 			//zone: 'Rainbow',
 			attack: 60,
 			strength: 5,
@@ -94,7 +94,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 3001,
-			name: 'Bone Bow',
+			equipmentname: 'Bone Bow',
 			attack: 9,
 			strength: 5,
 			agility: 5,
@@ -102,7 +102,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 3002,
-			name: 'Steel Bow',
+			equipmentname: 'Steel Bow',
 			attack: 16,
 			strength: 5,
 			agility: 5,
@@ -110,7 +110,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 3003,
-			name: 'Magma Bow',
+			equipmentname: 'Magma Bow',
 			attack: 36,
 			strength: 5,
 			agility: 5,
@@ -118,7 +118,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 3888,
-			name: 'Magic Bow',
+			equipmentname: 'Magic Bow',
 			attack: 60,
 			strength: 5,
 			agility: 5,
@@ -126,7 +126,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 4001,
-			name: 'Bone Staff',
+			equipmentname: 'Bone Staff',
 			attack: 11,
 			strength: 5,
 			agility: 5,
@@ -134,7 +134,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 4002,
-			name: 'Steel Staff',
+			equipmentname: 'Steel Staff',
 			attack: 24,
 			strength: 5,
 			agility: 5,
@@ -142,7 +142,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 4003,
-			name: 'Magma Staff',
+			equipmentname: 'Magma Staff',
 			attack: 40,
 			strength: 5,
 			agility: 5,
@@ -150,7 +150,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 4888,
-			name: 'Magic Staff',
+			equipmentname: 'Magic Staff',
 			attack: 60,
 			strength: 5,
 			agility: 5,
@@ -160,7 +160,7 @@ const EQUIPMENT_TYPES = {
 	armour: [
 		{
 			id: 5001,
-			name: 'Bone Helmet',
+			equipmentname: 'Bone Helmet',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -168,7 +168,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 5002,
-			name: 'Steel Helmet',
+			equipmentname: 'Steel Helmet',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -176,7 +176,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 5003,
-			name: 'Magma Helmet',
+			equipmentname: 'Magma Helmet',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -184,7 +184,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 5888,
-			name: 'Magic Helmet',
+			equipmentname: 'Magic Helmet',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -192,7 +192,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 6001,
-			name: 'Bone Boots',
+			equipmentname: 'Bone Boots',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -200,7 +200,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 6002,
-			name: 'Steel Boots',
+			equipmentname: 'Steel Boots',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -208,7 +208,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 6003,
-			name: 'Magma Boots',
+			equipmentname: 'Magma Boots',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -216,7 +216,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 6888,
-			name: 'Magic Boots',
+			equipmentname: 'Magic Boots',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -224,7 +224,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 7001,
-			name: 'Bone Legs',
+			equipmentname: 'Bone Legs',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -232,7 +232,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 7002,
-			name: 'Steel Legs',
+			equipmentname: 'Steel Legs',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -240,7 +240,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 7003,
-			name: 'Magma Legs',
+			equipmentname: 'Magma Legs',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -248,7 +248,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 7888,
-			name: 'Magic Legs',
+			equipmentname: 'Magic Legs',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -256,7 +256,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 8001,
-			name: 'Bone Armour',
+			equipmentname: 'Bone Armour',
 			armour: 9,
 			strength: 5,
 			agility: 5,
@@ -264,7 +264,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 8002,
-			name: 'Steel Armour',
+			equipmentname: 'Steel Armour',
 			armour: 14,
 			strength: 5,
 			agility: 5,
@@ -272,7 +272,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 8003,
-			name: 'Magma Armour',
+			equipmentname: 'Magma Armour',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -280,7 +280,7 @@ const EQUIPMENT_TYPES = {
 		},
 		{
 			id: 8888,
-			name: 'Magic Armour',
+			equipmentname: 'Magic Armour',
 			armour: 17,
 			strength: 5,
 			agility: 5,
@@ -290,21 +290,21 @@ const EQUIPMENT_TYPES = {
 	trinkets: [
 		{
 			id: 9001,
-			name: 'Glacier Amulet',
+			equipmentname: 'Glacier Amulet',
 			strength: 5,
 			agility: 5,
 			intelligence: 5,
 		},
 		{
 			id: 9011,
-			name: 'Garlic Necklace',
+			equipmentname: 'Garlic Necklace',
 			strength: 5,
 			agility: 5,
 			intelligence: 5,
 		},
 		{
 			id: 9002,
-			name: 'Platinum Amulet',
+			equipmentname: 'Platinum Amulet',
 			strength: 5,
 			agility: 5,
 			intelligence: 5,
@@ -316,7 +316,7 @@ const EQUIPMENT_TYPES = {
 export default EQUIPMENT_TYPES;
 /*{
 	id: ,
-	name: '',
+	equipmentname: '',
 	attack: ,
 },*/
 

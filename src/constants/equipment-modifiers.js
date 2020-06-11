@@ -7,7 +7,7 @@ const EQUIPMENT_MODIFIERS = {
 																			id: 1001,
 																			prename: 'frosted',
 																			type: 'zone-cold',
-																			modifier: 'increase',
+																			//modifier: 'increase',
 																			unit: 'percentage',
 																			scaler: 1,
 																			rangeLower: 1,
@@ -17,9 +17,9 @@ const EQUIPMENT_MODIFIERS = {
 															suffix:[
 																			{
 																				id: 2001,
-																				name : 'inuit',
+																				sufname : 'inuit',
 																				type: 'mob-cold',
-																				modifier: 'increase',
+																				//modifier: 'increase',
 																				unit: 'percentage',
 																				scaler: 1,
 																				rangeLower: 1,
