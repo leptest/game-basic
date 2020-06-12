@@ -18,8 +18,8 @@
 
 	.item-icon {
 		float: left;
-		height: 50px;
-		width: 50px;
+		max-height: 50px;
+		max-width: 50px;
 	}
 
 	p {
@@ -74,5 +74,3 @@ label {
 .rarity-4 {
 	border-color: #ff8000;
 }
-
-.prefix
