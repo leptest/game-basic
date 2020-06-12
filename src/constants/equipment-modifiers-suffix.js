@@ -3,7 +3,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
 
 																			{
 																				suffix: 'Inuit',
-																				id: 100,
+																				suffixid: 101,
 																				type: 'cold',
 																			//	modifier: 'increase',
 																				unit: 'percentage',
@@ -13,7 +13,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
 																			},
 																			{
 																				suffix: 'Seal',
-																				id: 101,
+																				suffixid: 102,
 																				type: 'cold',
 																				//modifier: 'increase',
 																				unit: 'percentage',
@@ -23,7 +23,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
 																			},
                                       {
                                         suffix: 'Penguin',
-                                        id: 102,
+                                        suffixid: 103,
                                         type: 'cold',
                                         //modifier: 'increase',
                                         unit: 'percentage',
@@ -33,7 +33,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
                                       },
                                       {
                                         suffix: 'Yeti',
-                                        id: 103,
+                                        suffixid: 104,
                                         type: 'cold',
                                         //modifier: 'increase',
                                         unit: 'percentage',
@@ -43,7 +43,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
                                       },
                                       {
                                         suffix: 'Walrus',
-                                        id: 104,
+                                        suffixid: 105,
                                         type: 'cold',
                                         //modifier: 'increase',
                                         unit: 'percentage',
@@ -56,7 +56,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
   fire: [
                                       {
                                         suffix: 'Emberling',
-                                        id: 105,
+                                        suffixid: 201,
                                         type: 'fire',
                                         //modifier: 'increase',
                                         unit: 'percentage',
@@ -66,7 +66,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
                                       },
                                         {
                                         suffix: 'Flame',
-                                        id: 106,
+                                        suffixid: 202,
                                         type: 'fire',
                                         //modifier: 'increase',
                                         unit: 'percentage',
@@ -76,7 +76,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
                                       },
                                       {
                                       suffix: 'Ash',
-                                      id: 107,
+                                      suffixid: 203,
                                       type: 'fire',
                                       //modifier: 'increase',
                                       unit: 'percentage',
@@ -86,7 +86,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
                                     },
                                     {
                                     suffix: 'Devil',
-                                    id: 108,
+                                    suffixid: 204,
                                     type: 'fire',
                                     //modifier: 'increase',
                                     unit: 'percentage',
@@ -96,7 +96,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
                                   },
                                   {
                                   suffix: 'Dragon',
-                                  id: 109,
+                                  suffixid: 205,
                                   type: 'fire',
                                   //modifier: 'increase',
                                   unit: 'percentage',

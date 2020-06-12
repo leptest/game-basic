@@ -5,7 +5,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 	cold: [
 																			{
 																		  prefix: 'Frosted',
-																			id: 0,
+																			prefixid: 11,
 																			type: 'cold',
 																			modifier: 'increase',
 																			unit: 'percentage',
@@ -15,7 +15,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 																			},
 																			{
 																			prefix: 'Chilled',
-																			id: 1,
+																			prefixid: 12,
 																			type: 'cold',
 																			modifier: 'increase',
 																			unit: 'percentage',
@@ -25,7 +25,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 																			},
 																			{
 																			prefix: 'Icy',
-																			id: 2,
+																			prefixid: 13,
 																			type: 'cold',
 																			modifier: 'increase',
 																			unit: 'percentage',
@@ -35,7 +35,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 																 			},
 																			{
 																			prefix: 'Frigid',
-																			id: 3,
+																			prefixid:14,
 																			type: 'cold',
 																			modifier: 'increase',
 																			unit: 'percentage',
@@ -45,7 +45,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 																			},
 																			{
 																			prefix: 'Freezing',
-																			id: 4,
+																			prefixid: 15,
 																			type: 'cold',
 																			modifier: 'increase',
 																			unit: 'percentage',
@@ -55,10 +55,10 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 															     		},
 																		],
 
-			fire: [								
+			fire: [
 																			{
 																			prefix: 'Heated',
-																			id: 5,
+																			prefixid: 21,
 																			type: 'fire',
 																			modifier: 'increase',
 																			unit: 'percentage',
@@ -68,7 +68,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 																			},
 																			{
 																			prefix: 'Glowing',
-																			id: 6,
+																			prefixid: 22,
 																			type: 'fire',
 																			modifier: 'increase',
 																			unit: 'percentage',
@@ -78,7 +78,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 																			},
 																			{
 																			prefix: 'Melting',
-																			id: 7,
+																			prefixid: 23,
 																			type: 'fire',
 																			modifier: 'increase',
 																			unit: 'percentage',
@@ -88,7 +88,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 																			},
 																			{
 																			prefix: 'Molten',
-																			id: 8,
+																			prefixid: 24,
 																			type: 'fire',
 																			modifier: 'increase',
 																			unit: 'percentage',
@@ -98,7 +98,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 																			},
 																			{
 																			prefix: 'Lava',
-																			id: 9,
+																			prefixid: 25,
 																			type: 'fire',
 																			modifier: 'increase',
 																			unit: 'percentage',
