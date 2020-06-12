@@ -54,7 +54,7 @@ label {
 }
 
 .rarity {
-	border: 2px solid #e8e8e8;
+	border: 5px solid #e8e8e8;
 }
 
 .rarity-0 {
@@ -75,4 +75,22 @@ label {
 
 .rarity-4 {
 	border-color: #ff8000;
+}
+
+
+.prefix {
+  box-shadow: 10px 10px 20px blue;
+}
+
+.prefix-1 {
+  box-shadow: 10px 10px 20px red;
+}
+
+
+.suffix {
+	box-shadow: 10px 10px 40px yellow inset;
+}
+
+.suffix-1 {
+	box-shadow: 10px 10px 40px green inset;
 }
