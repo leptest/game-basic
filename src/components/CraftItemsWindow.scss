@@ -54,43 +54,59 @@ label {
 }
 
 .rarity {
-	border: 5px solid #e8e8e8;
+	outline: 12px solid #ac7339;
 }
 
 .rarity-0 {
-	border-color: #e8e8e8;
+  outline-color: #ac7339;
 }
 
 .rarity-1 {
-	border-color: #1eff00;
+	outline-color: #006600;
 }
 
 .rarity-2 {
-	border-color: #0070ff;
+	outline-color: #0000e6;
 }
 
 .rarity-3 {
-	border-color: #a335ee;
+	outline-color: #ff9900;
 }
 
 .rarity-4 {
-	border-color: #ff8000;
+	outline-color: #e600e6;
 }
+
+
 
 
 .prefix {
-  box-shadow: 10px 10px 20px blue;
+	border: 7px solid aqua;
+	border-width: 7px 0 0 7px;
+	//box-shadow: 10px 0px 20px yellow inset;
+}
+
+.prefix-0 {
+	border: 7px solid aqua;
+	border-width: 7px 0 0 7px;
+	//box-shadow: 0px 10px 40px yellow inset;
 }
 
 .prefix-1 {
-  box-shadow: 10px 10px 20px red;
+	border: 7px solid red;
+	border-width: 7px 0 0 7px;
+	//box-shadow: 0px 10px 40px green inset;
 }
 
 
 .suffix {
-	box-shadow: 10px 10px 40px yellow inset;
+  box-shadow: inset 10px 10px 0px 0px aqua;
+}
+
+.suffix-0 {
+  box-shadow: inset 10px 10px 0px 0px aqua;
 }
 
 .suffix-1 {
-	box-shadow: 10px 10px 40px green inset;
+	box-shadow: inset 10px 10px 0px 0px red;
 }
