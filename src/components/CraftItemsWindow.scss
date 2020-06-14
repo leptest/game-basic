@@ -17,7 +17,8 @@
 
 .crafted-item {
 	flex: 0 1 24%;
-	border: 10px solid black;
+	// border: 10px solid black;
+	box-shadow: 0 0 0 10px black;
 	padding: 5px;
 	border-radius: 10px 10px 10px 10px;
 
@@ -30,7 +31,7 @@
 	}
 
 	p {
-		margin-left: 40px;
+		margin-left: 55px;
 		margin-bottom: 0;
 	}
 
@@ -58,71 +59,70 @@ label {
 	}
 }
 
-/*.rarity {
-	outline: 6px solid #ac7339;
+.item-title {
+	font-weight: bold;
+	font-size: 1.1em;
+	margin-top: 0;
 }
 
 .rarity-0 {
-  outline-color: #ac7339;
+	.item-title {
+		color: #ac7339;
+	}
 }
 
 .rarity-1 {
-	outline-color: #006600;
+	.item-title {
+		color: #006600;
+	}
 }
 
 .rarity-2 {
-	outline-color: #0000e6;
+	.item-title {
+		color: #0000e6;
+	}
 }
 
 .rarity-3 {
-	outline-color: #ff9900;
+	.item-title {
+		color: #ff9900;
+	}
 }
 
 .rarity-4 {
-	outline-color: #e600e6;
+	.item-title {
+		color: #e600e6;
+	}
 }
-*/
-
 
 
 .prefix {
-	padding: 100px;
-  border-top: 10px solid blue;
+	border-top: 10px solid blue;
 	border-left: 10px solid blue;
-	opacity: 50%;
-	padding: 10px;
 }
 
 .prefix-0 {
-	padding: 100px;
 	border-top: 10px solid blue;
 	border-left: 10px solid blue;
-	opacity: 50%;
 }
+
 .prefix-1 {
-	padding: 100px;
 	border-top: 10px solid red;
 	border-left: 10px solid red;
-	opacity: 50%;
 }
 
 
 .suffix {
-	padding: 100px;
-  border-bottom: 10px solid blue;
+	border-bottom: 10px solid blue;
 	border-right: 10px solid blue;
-	opacity: 50%;
 }
 
 .suffix-0 {
-	padding: 100px;
 	border-bottom: 10px solid blue;
 	border-right: 10px solid blue;
-	opacity: 50%;
 }
+
 .suffix-1 {
-	padding: 100px;
 	border-bottom: 10px solid red;
 	border-right: 10px solid red;
-	opacity: 50%;
-	}
+}
