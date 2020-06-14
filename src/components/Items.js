@@ -10,14 +10,14 @@ const ConnectedItems = ({ usePotion }) => {
 	const useHealthPotion = () => {
 		usePotion({
 			type: 'health',
-			amount: 20,
+			amount: 200,
 		});
 	};
 
 	const useManaPotion = () => {
 		usePotion({
 			type: 'mana',
-			amount: 10,
+			amount: 200,
 		});
 	};
 
