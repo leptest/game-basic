@@ -1,5 +1,4 @@
 import {
-	ADD_ARTICLE,
 	TARGET_PLAYER,
 	ATTACK_ENEMY,
 	CAST_SPELL,
@@ -7,10 +6,6 @@ import {
 	NEW_BATTLE,
 	USE_POTION,
 } from '../constants/action-types';
-
-export function addArticle(payload) {
-	return { type: ADD_ARTICLE, payload };
-}
 
 export function targetPlayer(payload) {
 	return { type: TARGET_PLAYER, payload };

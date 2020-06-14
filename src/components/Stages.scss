@@ -1,0 +1,15 @@
+.zone-stages-window {
+	background-color: rgba(#ffffff, 0.8);
+	padding: 1em 2em 2em 2em;
+}
+
+.stage {
+	display: inline-flex;
+	align-items: center;
+	margin: 5px;
+	padding: 5px 10px;
+
+	img {
+		margin-left: 4px;
+	}
+}

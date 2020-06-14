@@ -1,5 +1,3 @@
-export const ADD_ARTICLE = 'ADD_ARTICLE';
-
 export const TARGET_PLAYER = 'TARGET_PLAYER';
 
 export const ATTACK_ENEMY = 'ATTACK_ENEMY';

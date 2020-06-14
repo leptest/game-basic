@@ -5,7 +5,6 @@ import cloneDeep from 'lodash.clonedeep';
 import Mob from '../classes/mob';
 
 import {
-	ADD_ARTICLE,
 	TARGET_PLAYER,
 	ATTACK_ENEMY,
 	CAST_SPELL,
@@ -15,16 +14,13 @@ import {
 } from '../constants/action-types';
 import MONSTER_TYPES from '../constants/monster-types';
 import SPELL_TYPES from '../constants/spell-types';
+import ZONE_TYPES from '../constants/zone-types';
 import EXP_LEVELS from '../constants/exp-levels';
 import { randomIntegerInRange } from '../utils/utils';
 
 // const test = ;
 
 const initialState = {
-	articles: [{
-		id: 1,
-		title: 'my title',
-	}],
 	player: {
 		id: 99,
 		icon: '/images/players/player.svg',
@@ -48,21 +44,14 @@ const initialState = {
 	levelUps: 0,
 	nextBracket: 10,
 	targetedPlayer: null,
+	isFighting: false,
+	currentZone: 2,
+	currentStage: 1,
+	zones: ZONE_TYPES,
 };
 
 const rootReducer = (state = initialState, action) => {
 	switch (action.type) {
-	case ADD_ARTICLE: {
-		console.log('ADD_ARTICLE');
-		return {
-			...cloneDeep(state),
-			articles: [
-				...cloneDeep(state.articles),
-				action.payload,
-			],
-		};
-	}
-
 	case TARGET_PLAYER: {
 		console.log('TARGET_PLAYER', action.payload);
 		return {
@@ -101,17 +90,10 @@ const rootReducer = (state = initialState, action) => {
 				health: newPlayerHealth,
 			},
 		};
-		// return {
-		// 	...cloneDeep(state),
-		// 	player: [
-		// 		...cloneDeep(state.articles),
-		// 		action.payload,
-		// 	],
-		// };
 	}
 
 	case NEW_BATTLE: {
-		console.log('NEW_BATTLE');
+		console.log('NEW_BATTLE', action.payload.stage);
 		const numEnemies = randomIntegerInRange(1, 4);
 		const enemies = [];
 
@@ -124,6 +106,8 @@ const rootReducer = (state = initialState, action) => {
 		return {
 			...cloneDeep(state),
 			enemies,
+			currentZone: action.payload.zone,
+			currentStage: action.payload.stage,
 		};
 	}
 

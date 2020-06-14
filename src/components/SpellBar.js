@@ -23,7 +23,7 @@ const ConnectedSpellBar = (props) => {
 	return (
 		<div className="spell-bar">
 			{spells && spells.length ? spells.map((spell) => {
-				console.log('spell', spell);
+				console.log('x');
 				return (<button key={spell.id} className="spell" type="button" onClick={() => { attack(spell); }}>{spell.name}</button>);
 			}) : null}
 		</div>

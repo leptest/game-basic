@@ -5,6 +5,7 @@ import * as allActions from '../actions/index';
 import './FightWindow.scss';
 
 import Player from './Player';
+import Stages from './Stages';
 
 class ConnectedFightWindow extends Component {
 	// constructor(props) {
@@ -14,13 +15,6 @@ class ConnectedFightWindow extends Component {
 	//
 	// 	// props.newBattle();
 	// }
-
-	levelUpHealth = (event) => {
-		event.preventDefault();
-		console.log('levelUpHealth, this.props', this.props);
-		const { levelUp } = this.props;
-		levelUp({ health: 15 });
-	}
 
 	levelUpStrength = (event) => {
 		event.preventDefault();
@@ -48,8 +42,10 @@ class ConnectedFightWindow extends Component {
 			player,
 			enemies,
 			levelUps,
-			newBattle,
+			// newBattle,
 			nextBracket,
+			currentZone,
+			currentStage,
 		} = this.props;
 
 		console.log('nextBracket', nextBracket);
@@ -57,8 +53,11 @@ class ConnectedFightWindow extends Component {
 		return (
 			<div className="fight-window">
 				<header>
-					<br />
-					<h1>Battle!</h1>
+					<h1>Battle Window</h1>
+					<hr />
+					<Stages />
+					<hr />
+					<h1>Zone {currentZone} - Stage {currentStage}</h1>
 				</header>
 
 				<div className="characters characters--player">
@@ -69,21 +68,18 @@ class ConnectedFightWindow extends Component {
 					{enemies && enemies.length ? enemies.map((enemy) => (
 						<Player key={enemy.id} player={enemy} isEnemey />
 					)) : null }
+
 				</div>
 
 				{levelUps ? (
 					<div className="level-ups">
 						<p>You have {levelUps} new levels to spend!</p>
-						<button onClick={this.levelUpHealth} type="button">Health ({player.health})</button>
 						<button onClick={this.levelUpStrength} type="button">Strength ({player.strength})</button>
 						<button onClick={this.levelUpagility} type="button">agility ({player.agility})</button>
 						<button onClick={this.levelUpintelligence} type="button">intelligence ({player.intelligence})</button>
 					</div>
 				) : null }
 
-				<footer>
-					<button className="button" style={{ float: 'right' }} onClick={newBattle} type="button">Next Fight</button>
-				</footer>
 			</div>
 		);
 	}
@@ -106,6 +102,8 @@ const mapStateToProps = (state) => ({
 	enemies: state.rootReducer.enemies,
 	levelUps: state.rootReducer.levelUps,
 	nextBracket: state.rootReducer.nextBracket,
+	currentZone: state.rootReducer.currentZone,
+	currentStage: state.rootReducer.currentStage,
 });
 
 const FightWindow = connect(
