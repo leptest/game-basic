@@ -10,14 +10,14 @@
 	width: 260px;
 	// height: 200px;
 	border-radius: 16px 16px 16px 16px;
-	box-shadow: 5px 4px 5px #000, -2.5px -2px 2.5px #000;
+	box-shadow: 5px 4px 5px #000000, -2.5px -2px 2.5px #000000;
 	background-color: #ffffff;
 	opacity: 0.9;
 	margin: 20px;
 	padding: 10px;
 
 	&.is-targeted {
-		border-color: orange;
+		box-shadow: 5px 4px 5px orange, -2.5px -2px 2.5px orange;
 	}
 }
 

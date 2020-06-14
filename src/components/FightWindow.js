@@ -54,9 +54,7 @@ class ConnectedFightWindow extends Component {
 			<div className="fight-window">
 				<header>
 					<h1>Battle Window</h1>
-					<hr />
 					<Stages />
-					<hr />
 					<h1>Zone {currentZone} - Stage {currentStage}</h1>
 				</header>
 

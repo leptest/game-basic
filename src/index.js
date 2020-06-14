@@ -31,7 +31,7 @@ ReactDOM.render(
 	<Provider store={store}>
 		<ConnectedRouter history={history}> { /* place ConnectedRouter under Provider */ }
 			<> { /* your usual react-router v4/v5 routing */ }
-				<nav>
+				<nav className="site-nav">
 					<ul>
 						<li><a href="/">Home</a></li>
 						<li><a href="/craft-spells">Craft Spells</a></li>

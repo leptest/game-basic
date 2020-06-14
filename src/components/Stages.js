@@ -16,7 +16,7 @@ const ConnectedStages = ({ newBattle, zones }) => (
 				</h2>
 				<div className="stages">
 					{zone.stages && zone.stages.length ? zone.stages.map((stage) => (
-						<button key={stage.stage} className="stage" onClick={() => { newBattle({ zone: zone.zone, stage: stage.stage }); }} type="button">
+						<button key={stage.stage} className="stage" onClick={() => { newBattle({ zone: zone.zone, stage }); }} type="button">
 							{stage.title}
 							{stage.isCompleted ? (<img src="/images/icons/done-24px.svg" alt="icon" />) : null}
 							{stage.isLocked ? (<img src="/images/icons/lock-24px.svg" alt="icon" />) : null}
