@@ -13,7 +13,13 @@ import './Player.scss';
 const ConnectedPlayer = (props) => {
 	// console.log(props);
 	const {
-		player, attackEnemy, isEnemey, levelUps, nextBracket, targetPlayer, targetedPlayer,
+		player,
+		// attackEnemy,
+		isEnemey,
+		levelUps,
+		nextBracket,
+		targetPlayer,
+		targetedPlayer,
 	} = props;
 
 	if (!player) return false;
@@ -26,19 +32,19 @@ const ConnectedPlayer = (props) => {
 		maxHealth,
 		mana,
 		maxMana,
-		speed,
+		// speed,
 		strength,
 		agility,
 		intelligence,
-		isDead,
+		// isDead,
 		exp,
 		icon,
 		spells,
 	} = player;
 
-	const attack = () => {
-		attackEnemy({ id });
-	};
+	// const attack = () => {
+	// 	attackEnemy({ id });
+	// };
 
 	let charClass = 'character';
 

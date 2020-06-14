@@ -4,7 +4,7 @@
 const EQUIPMENT_MODIFIERS_PREFIX = {
 	cold: [
 		{
-																		  prefix: 'Frosted',
+			prefix: 'Frosted',
 			prefixid: 11,
 			type: 'cold',
 			modifier: 'increase',
@@ -32,7 +32,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 			scaler: 1,
 			rangeLower: 1,
 			rangeUpper: 100,
-																 			},
+		},
 		{
 			prefix: 'Frigid',
 			prefixid: 14,
@@ -52,7 +52,7 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 			scaler: 1,
 			rangeLower: 1,
 			rangeUpper: 100,
-															     		},
+		},
 	],
 
 	fire: [
