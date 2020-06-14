@@ -12,7 +12,7 @@ const ZONE_TYPES = [
 				title: 'Stage 1 - Fire Caverns',
 				isCompleted: true,
 				isLocked: false,
-				minMonsters: 3,
+				minMonsters: 2,
 				maxMonsters: 4,
 				monsters: [9, 10],
 			},

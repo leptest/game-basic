@@ -95,25 +95,22 @@ const rootReducer = (state = initialState, action) => {
 	case NEW_BATTLE: {
 		const { zone, stage } = action.payload;
 
-		console.log('NEW_BATTLE', zone, stage);
+		console.log('NEW_BATTLE');
+		console.log(zone.title);
+		console.log(stage.title);
+
 		const numEnemies = randomIntegerInRange(stage.minMonsters, stage.maxMonsters);
 		const enemies = [];
 
 		const filteredEnemies = MONSTER_TYPES.filter((mob) => {
 			let isPartOfBattle = false;
 			stage.monsters.forEach((id) => {
-				console.log('id', id);
-				console.log('mob.id', mob.id);
 				if (mob.id === id) {
 					isPartOfBattle = true;
 				}
 			});
-			console.log('isPartOfBattle', isPartOfBattle);
 			return isPartOfBattle;
 		});
-
-
-		console.log('filteredEnemies', filteredEnemies);
 
 		for (let i = 0; i < numEnemies; i += 1) {
 			const mobLevel = state.player.level; // randomIntegerInRange(1, 3)
@@ -124,7 +121,7 @@ const rootReducer = (state = initialState, action) => {
 		return {
 			...cloneDeep(state),
 			enemies,
-			currentZone: zone,
+			currentZone: zone.zone,
 			currentStage: stage.stage,
 		};
 	}

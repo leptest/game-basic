@@ -48,8 +48,6 @@ class ConnectedFightWindow extends Component {
 			currentStage,
 		} = this.props;
 
-		console.log('nextBracket', nextBracket);
-
 		return (
 			<div className="fight-window">
 				<header>
