@@ -194,14 +194,19 @@ const rootReducer = (state = initialState, action) => {
 			// console.log('default');
 		}
 
+		// Spell damange modifier
+		let spellDamageMod = 1;
+		spellDamageMod += (player.intelligence / 100);
+		console.log(`Spell damage: ${spellDamageMod * 100}%`);
 
+		// Crit Chance
 		if (Math.random() < player.critChance) {
 			damageModifier = 2;
 			console.log('Crit!');
 		}
 
 		let { isDead } = enemy;
-		const damage = spell.damage * damageModifier;
+		const damage = Math.ceil(spell.damage * spellDamageMod * damageModifier);
 
 		let newHealth = enemy.health - damage;
 		const currentPlayerExp = player.exp;
