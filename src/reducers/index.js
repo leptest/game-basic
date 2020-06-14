@@ -113,7 +113,7 @@ const rootReducer = (state = initialState, action) => {
 		});
 
 		for (let i = 0; i < numEnemies; i += 1) {
-			const mobLevel = state.player.level; // randomIntegerInRange(1, 3)
+			const mobLevel = randomIntegerInRange(stage.minLevel, stage.maxLevel); // state.player.level;
 			const randomEnemy = filteredEnemies[Math.floor(Math.random() * filteredEnemies.length)].name;
 			enemies.push(Mob(i, randomEnemy, mobLevel));
 		}
