@@ -78,7 +78,7 @@ const rootReducer = (state = initialState, action) => {
 		// Mana
 		let newPlayerMana = state.player.mana;
 		if (action.payload.type === 'mana') {
-			newPlayerMana += 10;
+			newPlayerMana += action.payload.amount;
 		}
 		if (newPlayerMana > state.player.maxMana) {
 			newPlayerMana = state.player.maxMana;
@@ -87,7 +87,7 @@ const rootReducer = (state = initialState, action) => {
 		// Health
 		let newPlayerHealth = state.player.health;
 		if (action.payload.type === 'health') {
-			newPlayerHealth += 10;
+			newPlayerHealth += action.payload.amount;
 		}
 		if (newPlayerHealth > state.player.maxHealth) {
 			newPlayerHealth = state.player.maxHealth;
