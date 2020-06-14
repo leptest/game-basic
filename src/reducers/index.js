@@ -194,7 +194,7 @@ const rootReducer = (state = initialState, action) => {
 			// console.log('default');
 		}
 
-		// Spell damange modifier
+		// Spell damage modifier
 		let spellDamageMod = 1;
 		spellDamageMod += (player.intelligence / 100);
 		console.log(`Spell damage: ${spellDamageMod * 100}%`);
