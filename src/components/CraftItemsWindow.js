@@ -9,8 +9,8 @@ import EQUIPMENT_MODIFIERS_SUFFIX from '../constants/equipment-modifiers-suffix'
 
 import './CraftItemsWindow.scss';
 
-//const prefixTypes = ['cold', 'fire'];
-//const suffixTypes = ['cold', 'fire'];
+// const prefixTypes = ['cold', 'fire'];
+// const suffixTypes = ['cold', 'fire'];
 const itemTypes = ['Armour', 'Trinket', 'Weapon'];
 const rarityNames = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary'];
 const rarityChances = [1, 0.4, 0.2, 0.05, 0.01];
@@ -85,7 +85,6 @@ class ConnectedCraftItemsWindow extends Component {
 		console.log('Prefix: ', prefix);
 
 
-
 		let suffixes;
 
 		if (suffixType === 0) {
@@ -122,7 +121,7 @@ class ConnectedCraftItemsWindow extends Component {
 		console.log('Base Item: ', baseItem);
 
 
-		/*// ROLL MODIFIERS
+		/* // ROLL MODIFIERS
 		const numModifiers = rarity;
 		const modifiers = ['prefix', 'suffix'];
 
@@ -132,7 +131,7 @@ class ConnectedCraftItemsWindow extends Component {
 		}
 
 
-		console.log('Modifiers: ', modifiers);*/
+		console.log('Modifiers: ', modifiers); */
 
 
 		const newItem = {
@@ -198,7 +197,7 @@ class ConnectedCraftItemsWindow extends Component {
 				</div>
 				<h2>Crafted Items:</h2>
 				<div className="crafted-items">
-				<div className={'border-item'}> </div>
+					<div className="border-item"> </div>
 					{savedItems && savedItems.length ? savedItems.map((savedItem, i) => (
 						<div className={`crafted-item rarity rarity-${savedItem.rarity}`} key={i}>
 							<div className={`prefixType suffixType prefix-${savedItem.prefixType} suffix-${savedItem.suffixType}`} />
@@ -222,12 +221,12 @@ class ConnectedCraftItemsWindow extends Component {
 							{savedItem.intelligence ? (
 								<p>Intelligence: {savedItem.intelligence}</p>
 							) : null}
-              {savedItem.modifiers ? (
+							{savedItem.modifiers ? (
 								<p>prefix: {savedItem.modifiers}</p>
 							) : null}
-							{/*savedItem.modifiers ? (
+							{/* savedItem.modifiers ? (
 								//<p>suffix: {savedItem.modifiers}</p>
-							) : null*/}
+							) : null */}
 
 							{/* <p>{rarityNames[savedItem.rarity]}</p> */}
 						</div>

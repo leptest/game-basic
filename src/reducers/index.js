@@ -155,7 +155,10 @@ const rootReducer = (state = initialState, action) => {
 	}
 
 	case CAST_SPELL: {
-		const { id, spell } = action.payload;
+		const {
+			// id,
+			spell,
+		} = action.payload;
 		console.log('CAST_SPELL', spell.name, spell.damageType);
 
 		const enemy = state.enemies.filter((e) => e.id === state.targetedPlayer)[0];
@@ -223,12 +226,12 @@ const rootReducer = (state = initialState, action) => {
 			newHealth = 0;
 			newExp = currentPlayerExp + enemy.exp;
 
-			let newBracket = 0;
+			// let newBracket = 0;
 
 			EXP_LEVELS.forEach((expLevel, index) => {
 				if (newExp > expLevel) {
 					newLevel = index + 1;
-					newBracket = EXP_LEVELS[index];
+					// newBracket = EXP_LEVELS[index];
 					nextBracket = EXP_LEVELS[index + 1];
 				}
 			});

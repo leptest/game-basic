@@ -9,27 +9,27 @@ const SPELL_TYPES = [
 		duration: 1,
 		damage: 25,
 	},
-	 {
-	id: 2,
+	{
+		id: 2,
 		name: 'Frostshard',
 		targetType: 'single',
 		damageType: 'magic',
 		manaCost: 2,
- 		cooldown: 1.0,
+		cooldown: 1.0,
 		duration: 1,
 		damage: 25,
-	 },
-	 {
+	},
+	{
 		id: 3,
 		name: 'lightning bolt',
 		targetType: 'single',
 		damageType: 'magic',
-	 	manaCost: 2,
+		manaCost: 2,
 		cooldown: 1.0,
 		duration: 1,
 		damage: 25,
-	 },
-	 {
+	},
+	{
 		id: 4,
 		name: 'Earth throw',
 		targetType: 'single',
@@ -38,8 +38,7 @@ const SPELL_TYPES = [
 		cooldown: 1.0,
 		duration: 1,
 		damage: 25,
-	 },
-
+	},
 	{
 		id: 5,
 		name: 'Stab',
