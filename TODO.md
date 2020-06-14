@@ -22,6 +22,7 @@
 * add turn order calculation
 * add turn system
 
+* add local storage / save state
 
 ## BUGS
 * if you level up twice on one creature, not working. use totalExp (and unspentExp?) prop
