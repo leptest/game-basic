@@ -7,7 +7,7 @@
 
 .character {
 	flex: 0 0 auto;
-	width: 260px;
+	width: 270px;
 	// height: 200px;
 	border-radius: 16px 16px 16px 16px;
 	box-shadow: 5px 4px 5px #000000, -2.5px -2px 2.5px #000000;
@@ -44,8 +44,8 @@
 
 	.character__icon {
 		grid-area: icon;
-		// width: 80px;
-		// height: 80px;
+		width: 55px;
+		height: 55px;
 	}
 
 	.character__name {
