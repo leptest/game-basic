@@ -11,10 +11,15 @@
 	flex: 0 0 15%;
 }
 
+.border-item {
+	border-radius: 10px 10px 10px 10px solid black;
+}
+
 .crafted-item {
 	flex: 0 1 24%;
-	border: 2px solid green;
+	border: 10px solid black;
 	padding: 5px;
+	border-radius: 10px 10px 10px 10px;
 
 	.item-icon {
 		float: left;
@@ -53,8 +58,8 @@ label {
 	}
 }
 
-.rarity {
-	outline: 12px solid #ac7339;
+/*.rarity {
+	outline: 6px solid #ac7339;
 }
 
 .rarity-0 {
@@ -76,37 +81,48 @@ label {
 .rarity-4 {
 	outline-color: #e600e6;
 }
-
+*/
 
 
 
 .prefix {
-	border: 7px solid aqua;
-	border-width: 7px 0 0 7px;
-	//box-shadow: 10px 0px 20px yellow inset;
+	padding: 100px;
+  border-top: 10px solid blue;
+	border-left: 10px solid blue;
+	opacity: 50%;
+	padding: 10px;
 }
 
 .prefix-0 {
-	border: 7px solid aqua;
-	border-width: 7px 0 0 7px;
-	//box-shadow: 0px 10px 40px yellow inset;
+	padding: 100px;
+	border-top: 10px solid blue;
+	border-left: 10px solid blue;
+	opacity: 50%;
 }
-
 .prefix-1 {
-	border: 7px solid red;
-	border-width: 7px 0 0 7px;
-	//box-shadow: 0px 10px 40px green inset;
+	padding: 100px;
+	border-top: 10px solid red;
+	border-left: 10px solid red;
+	opacity: 50%;
 }
 
 
 .suffix {
-  box-shadow: inset 10px 10px 0px 0px aqua;
+	padding: 100px;
+  border-bottom: 10px solid blue;
+	border-right: 10px solid blue;
+	opacity: 50%;
 }
 
 .suffix-0 {
-  box-shadow: inset 10px 10px 0px 0px aqua;
+	padding: 100px;
+	border-bottom: 10px solid blue;
+	border-right: 10px solid blue;
+	opacity: 50%;
 }
-
 .suffix-1 {
-	box-shadow: inset 10px 10px 0px 0px red;
-}
+	padding: 100px;
+	border-bottom: 10px solid red;
+	border-right: 10px solid red;
+	opacity: 50%;
+	}

@@ -198,8 +198,11 @@ class ConnectedCraftItemsWindow extends Component {
 				</div>
 				<h2>Crafted Items:</h2>
 				<div className="crafted-items">
+				<div className={'border-item'}> </div>
 					{savedItems && savedItems.length ? savedItems.map((savedItem, i) => (
-						<div className={`crafted-item rarity prefixType suffixType rarity-${savedItem.rarity} prefix-${savedItem.prefixType} suffix-${savedItem.suffixType}`} key={i}>
+						<div className={`crafted-item rarity rarity-${savedItem.rarity}`} key={i}>
+							<div className={`prefixType suffixType prefix-${savedItem.prefixType} suffix-${savedItem.suffixType}`} />
+              <div className={'border-item'}> </div>
 							<img className="item-icon" src={`/images/equipment/${savedItem.equipmentid}.gif`} alt="" />
 							<p> The {savedItem.prefix} {savedItem.equipmentname} of the {savedItem.suffix}</p>
 							<p>{itemTypes[savedItem.itemType]}</p>
