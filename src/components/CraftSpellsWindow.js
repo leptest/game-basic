@@ -160,7 +160,6 @@ class ConnectedCraftSpellsWindow extends Component {
 
 		const spellDescription = this.generateSpellDescription(spell);
 
-
 		return (
 			<div>
 				<div className="craft-window">
@@ -233,7 +232,6 @@ class ConnectedCraftSpellsWindow extends Component {
 		);
 	}
 }
-
 
 // function mapDispatchToProps(dispatch) {
 // 	return {

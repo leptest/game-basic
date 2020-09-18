@@ -105,9 +105,7 @@ const EQUIPMENT_MODIFIERS_SUFFIX = {
 			rangeUpper: 100,
 		},
 
-
 	],
 };
-
 
 export default EQUIPMENT_MODIFIERS_SUFFIX;

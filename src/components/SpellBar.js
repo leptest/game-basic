@@ -30,7 +30,6 @@ const ConnectedSpellBar = (props) => {
 	);
 };
 
-
 const mapDispatchToProps = {
 	...allActions,
 };

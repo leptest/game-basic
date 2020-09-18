@@ -312,7 +312,6 @@ const EQUIPMENT_TYPES = {
 	],
 };
 
-
 export default EQUIPMENT_TYPES;
 /* {
 	id: ,

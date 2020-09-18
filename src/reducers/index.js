@@ -1,4 +1,3 @@
-
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import cloneDeep from 'lodash.clonedeep';
@@ -62,7 +61,6 @@ const rootReducer = (state = initialState, action) => {
 
 	case USE_POTION: {
 		console.log('USE_POTION', action.payload);
-
 
 		// Mana
 		let newPlayerMana = state.player.mana;
@@ -170,7 +168,6 @@ const rootReducer = (state = initialState, action) => {
 		// If heal, do heal calc, and apply.
 		// If spell cast successfully, reduce mana.
 
-
 		// < spell.cost
 		if (player.mana < spell.manaCost) {
 			return {
@@ -213,7 +210,6 @@ const rootReducer = (state = initialState, action) => {
 		let newLevel = player.level;
 		let { levelUps } = state;
 
-
 		console.log(`${player.name} deals ${damage} damage to ${enemy.name}.`);
 		let nextBracket = 0;
 
@@ -249,7 +245,6 @@ const rootReducer = (state = initialState, action) => {
 			// console.log('levelUps', levelUps);
 		}
 
-
 		enemy.health = newHealth;
 		enemy.isDead = isDead;
 		enemy.mana -= 1;
@@ -277,7 +272,6 @@ const rootReducer = (state = initialState, action) => {
 		// 	health: newHealth,
 		// 	isDead,
 		// });
-
 
 		return {
 			...cloneDeep(state),
@@ -322,7 +316,6 @@ const rootReducer = (state = initialState, action) => {
 		let newLevel = player.level;
 		let { levelUps } = state;
 
-
 		console.log(`${player.name} deals ${damage} damage to ${enemy.name}.`);
 
 		if (newHealth <= 0) {
@@ -341,7 +334,6 @@ const rootReducer = (state = initialState, action) => {
 				newLevel = player.level + 1;
 			}
 		}
-
 
 		enemy.health = newHealth;
 		enemy.isDead = isDead;
@@ -370,7 +362,6 @@ const rootReducer = (state = initialState, action) => {
 		// 	health: newHealth,
 		// 	isDead,
 		// });
-
 
 		return {
 			...cloneDeep(state),

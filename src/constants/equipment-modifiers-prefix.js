@@ -109,7 +109,6 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 	],
 };
 
-
 /*	{
 		id: 1,
 		type: 'resistance-fire',
@@ -180,6 +179,5 @@ const EQUIPMENT_MODIFIERS_PREFIX = {
 		rangeLower: 1,
 		rangeUpper: 100,
 	}, */
-
 
 export default EQUIPMENT_MODIFIERS_PREFIX;

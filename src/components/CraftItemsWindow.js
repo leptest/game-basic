@@ -53,16 +53,13 @@ class ConnectedCraftItemsWindow extends Component {
 		const rarity = this.generateRarity();
 		const ilvl = randomIntegerInRange(1, 100);
 
-
 		console.log('Rarity: ', rarityNames[rarity]);
 		console.log('iLvl: ', ilvl);
-
 
 		// ROLL MODIFIERS
 		const numModifiers = rarity;
 		const prefixType = randomIntegerInRange(0, 1);
 		const suffixType = randomIntegerInRange(0, 1);
-
 
 		for (let i = 0; i < numModifiers; i++) {
 			// Pick random mod value at this point?
@@ -81,9 +78,7 @@ class ConnectedCraftItemsWindow extends Component {
 
 		const prefix = prefixes[randomIntegerInRange(0, prefixes.length - 1)];
 
-
 		console.log('Prefix: ', prefix);
-
 
 		let suffixes;
 
@@ -97,9 +92,7 @@ class ConnectedCraftItemsWindow extends Component {
 
 		const suffix = suffixes[randomIntegerInRange(0, suffixes.length - 1)];
 
-
 		console.log('Suffix: ', suffix);
-
 
 		// get base item;
 
@@ -120,7 +113,6 @@ class ConnectedCraftItemsWindow extends Component {
 
 		console.log('Base Item: ', baseItem);
 
-
 		/* // ROLL MODIFIERS
 		const numModifiers = rarity;
 		const modifiers = ['prefix', 'suffix'];
@@ -130,9 +122,7 @@ class ConnectedCraftItemsWindow extends Component {
 			modifiers.push(EQUIPMENT_MODIFIERS[randomIntegerInRange(0, EQUIPMENT_MODIFIERS.length)]);
 		}
 
-
 		console.log('Modifiers: ', modifiers); */
-
 
 		const newItem = {
 			id: ' GUID',
@@ -154,7 +144,6 @@ class ConnectedCraftItemsWindow extends Component {
 				newItem,
 			],
 		}), () => { console.log(this.state); });
-
 
 		// console.log(newItem);
 	}
@@ -185,7 +174,6 @@ class ConnectedCraftItemsWindow extends Component {
 			savedItems,
 		} = this.state;
 
-
 		return (
 			<div>
 				<div className="craft-window">
@@ -197,7 +185,7 @@ class ConnectedCraftItemsWindow extends Component {
 				</div>
 				<h2>Crafted Items:</h2>
 				<div className="crafted-items">
-					<div className="border-item"> </div>
+					{/* <div className="border-item"> </div> */}
 					{savedItems && savedItems.length ? savedItems.map((savedItem, i) => (
 						<div className={`crafted-item rarity rarity-${savedItem.rarity} prefix-${savedItem.prefixType} suffix-${savedItem.suffixType}`} key={i}>
 							<div className="prefixType suffixType" />
@@ -236,7 +224,6 @@ class ConnectedCraftItemsWindow extends Component {
 		);
 	}
 }
-
 
 // function mapDispatchToProps(dispatch) {
 // 	return {

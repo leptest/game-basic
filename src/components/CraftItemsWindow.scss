@@ -18,10 +18,10 @@
 .crafted-item {
 	flex: 0 1 24%;
 	//border: 10px solid black;
-	box-shadow: 5px 4px 5px #000, -2.5px -2px 2.5px #000;
+	box-shadow: 5px 4px 5px #000000, -2.5px -2px 2.5px #000000;
 	padding: 5px;
 	border-radius: 16px 16px 16px 16px;
-	background-color: hsla(40, 30%, 20%, .45);
+	background-color: hsla(40, 30%, 20%, 0.1);
 
 	.item-icon {
 		float: left;

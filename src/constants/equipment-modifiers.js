@@ -28,7 +28,6 @@ const EQUIPMENT_MODIFIERS = {
 	],
 };
 
-
 /*	{
 		id: 1,
 		type: 'resistance-fire',
@@ -99,6 +98,5 @@ const EQUIPMENT_MODIFIERS = {
 		rangeLower: 1,
 		rangeUpper: 100,
 	}, */
-
 
 export default EQUIPMENT_MODIFIERS;

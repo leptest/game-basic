@@ -15,7 +15,6 @@ import './index.scss';
 
 const store = configureStore(/* initial state - doesn't seem to be working correctly */);
 
-
 // import Player from './components/Player';
 // import List from './components/List';
 // import Form from './components/Form';
@@ -25,7 +24,6 @@ const store = configureStore(/* initial state - doesn't seem to be working corre
 // daniel.equip('shield');
 // daniel.attack(demon);
 // demon.reportInfo();
-
 
 ReactDOM.render(
 	<Provider store={store}>

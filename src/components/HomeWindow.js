@@ -24,7 +24,6 @@ class ConnectedHomeWindow extends Component {
 	}
 }
 
-
 // function mapDispatchToProps(dispatch) {
 // 	return {
 // 		fightEnemy: (enemy) => dispatch(attackEnemy(enemy)),
