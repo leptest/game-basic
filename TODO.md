@@ -5,7 +5,7 @@
 
 
 * reset health/mana on new battle-- take current health/mana with? (realistic)
-* if trying to attack with no mana, fail attack, but mob deals damage back? (realistic)
+* if trying to attack with no mana, fail attack
 
 
 * ~~get health and mana potions working~~

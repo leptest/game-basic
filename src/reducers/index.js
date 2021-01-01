@@ -28,8 +28,8 @@ const initialState = {
 		exp: 0,
 		health: 20,
 		maxHealth: 20,
-		mana: 10,
-		maxMana: 10,
+		mana: 20,
+		maxMana: 20,
 		strength: 1,
 		agility: 1,
 		intelligence: 1,
@@ -160,6 +160,7 @@ const rootReducer = (state = initialState, action) => {
 
 		const enemy = state.enemies.filter((e) => e.id === state.targetedPlayer)[0];
 		const { player } = state;
+		let { isDead } = enemy;
 
 		// Check mana cost
 		// Check spell type (damage, heal, buff, etc)
@@ -168,8 +169,8 @@ const rootReducer = (state = initialState, action) => {
 		// If heal, do heal calc, and apply.
 		// If spell cast successfully, reduce mana.
 
-		// < spell.cost
-		if (player.mana < spell.manaCost) {
+		// < spell.cost OR target is dead
+		if (player.mana < spell.manaCost || isDead) {
 			return {
 				...cloneDeep(state),
 			};
@@ -200,8 +201,7 @@ const rootReducer = (state = initialState, action) => {
 			damageModifier = 2;
 			console.log('Crit!');
 		}
-
-		let { isDead } = enemy;
+		// FINAL DAMAGE AMOUNT
 		const damage = Math.ceil(spell.damage * spellDamageMod * damageModifier);
 
 		let newHealth = enemy.health - damage;
