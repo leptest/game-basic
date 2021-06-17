@@ -9,26 +9,26 @@
     "eslint-fix": "eslint --ext .jsx,.js --fix ."
   },
   "dependencies": {
-    "connected-react-router": "6.8.0",
+    "connected-react-router": "6.9.1",
     "history": "5.0.0",
     "lodash.clonedeep": "4.5.0",
-    "node-sass": "4.14.1",
+    "node-sass": "6.0.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-redux": "7.2.2",
+    "react-redux": "7.2.4",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-scripts": "4.0.1",
-    "redux": "4.0.5",
-    "typescript": "4.1.3"
+    "react-scripts": "4.0.3",
+    "redux": "4.1.0",
+    "typescript": "4.3.3"
   },
   "devDependencies": {
-    "@leptest/eslint-config-leptest": "1.0.8",
-    "prettier": "2.2.1",
+    "@leptest/eslint-config-leptest": "2.2.0",
+    "prettier": "2.3.1",
     "sass-lint": "1.13.1",
-    "stylelint": "13.8.0",
-    "stylelint-config-recommended": "3.0.0",
-    "stylelint-config-standard": "20.0.0"
+    "stylelint": "13.13.1",
+    "stylelint-config-recommended": "5.0.0",
+    "stylelint-config-standard": "22.0.0"
   },
   "browserslist": {
     "production": [
